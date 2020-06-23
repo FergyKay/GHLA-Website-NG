@@ -1,0 +1,378 @@
+ <!-- Start: Header Section -->
+ <header id="header-v1" class="navbar-wrapper" >
+    <div class="container"  >
+
+        <nav class="navbar navbar-default navbar-expand-lg navbar-light bg-none" style="width:110%; margin-left:-60px; ">
+          <div class="row">
+            <div class="col-md-12">
+                <div class="header-topbar hidden-sm hidden-xs" >
+                    <div class="row" >
+                        <div class="col-sm-6">
+                            <div class="topbar-info">
+                                <div class="row">
+                                    <div class="col-md-1" style='padding:0px;'>
+                                        <img src="../../assets/logo/ghlaLogo.png" >
+                                    </div>
+                                    <div class="col-md-6" style='padding:0px;'>
+                                        <span style='line-height:50px; color:#d1d1d1; font-weight:500;'>Ghana Library Authority</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="topbar-links" style='line-height:50px;'>
+                                <a routerLinkActive="active" routerLink="/Signin"><i class="fa fa-lock"></i>Login / Register</a>
+                                <span>|</span>
+                                <div class="header-cart dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" routerLink="/">
+                                        <i class="fa fa-user"></i>
+                                        <small>0</small>
+                                    </a>
+                                    <!-- <div class="dropdown-menu cart-dropdown">
+                                        <ul>
+                                            <li class="clearfix">
+                                                <img src="../../assets/images/header-cart-image-01.jpg" alt="cart item" />
+                                                <div class="item-info">
+                                                    <div class="name">
+                                                        <a routerLink="/">The Great Gatsby</a>
+                                                    </div>
+                                                    <div class="author"><strong>Author:</strong> F. Scott Fitzgerald</div>
+                                                    <div class="price">1 X $10.00</div>
+                                                </div>
+                                                <a class="remove" routerLink="/"><i class="fa fa-trash-o"></i></a>
+                                            </li>
+                                            <li class="clearfix">
+                                                <img src="../../assets/images/header-cart-image-02.jpg" alt="cart item" />
+                                                <div class="item-info">
+                                                    <div class="name">
+                                                        <a routerLink="/">The Great Gatsby</a>
+                                                    </div>
+                                                    <div class="author"><strong>Author:</strong> F. Scott Fitzgerald</div>
+                                                    <div class="price">1 X $10.00</div>
+                                                </div>
+                                                <a class="remove" routerLink="/"><i class="fa fa-trash-o"></i></a>
+                                            </li>
+                                            <li class="clearfix">
+                                                <img src="../../assets/images/header-cart-image-03.jpg" alt="cart item" />
+                                                <div class="item-info">
+                                                    <div class="name">
+                                                        <a routerLink="/">The Great Gatsby</a>
+                                                    </div>
+                                                    <div class="author"><strong>Author:</strong> F. Scott Fitzgerald</div>
+                                                    <div class="price">1 X $10.00</div>
+                                                </div>
+                                                <a class="remove" routerLink="/"><i class="fa fa-trash-o"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="cart-total">
+                                            <div class="title">SubTotal</div>
+                                            <div class="price">$30.00</div>
+                                        </div>
+                                        <div class="cart-buttons">
+                                            <a routerLink="Cart" class="btn btn-dark-gray">View Cart</a>
+                                            <a routerLink="Checkout" class="btn btn-primary">Checkout</a>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+            <div class="navbar-collapse hidden-sm hidden-xs" >
+                <ul class="nav navbar-nav" >
+                    <li class="dropdown" routerLinkActive="active" [routerLinkActiveOptions] = "{exact: true}">
+                        <a data-toggle="dropdown"  routerLink= "/" >Home</a>
+                        
+                    </li>
+                    <li class="dropdown">
+                        <a  href= "http://ils.ghanalibrary.org" target="_blank" >Catalog</a>
+                    </li>
+                    <li   [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}">
+                        <a routerLink="/web-home/Newsevents">News &amp; Events</a>
+                    </li >
+
+
+                    <li class="dropdown" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}">
+                        <a data-toggle="dropdown" class="dropdown-toggle disabled" >Programmes</a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="NewsEventsListView">National short story writing challenge</a></li>
+                            <li><a routerLink="NewsEventsDetail">Coursera </a></li>
+                            <li><a routerLink="NewsEventsDetail">Read to skil</a></li>
+                        </ul>
+                    </li >
+
+
+                    <li class="dropdown" >
+                        <a  href='http://localhost/ISBN_DEPLOYMENT/index.php' >ISBN Purchase</a>
+                        <!-- <ul class="dropdown-menu">
+                            <li><a routerLink="Cart">Purchase ISBN</a></li>
+                            <li><a routerLink="Checkout">Purchase ISSN</a></li>
+                            <li><a routerLink="Signin">Purcase ISMN</a></li>
+                            <li><a routerLink="Error404">Obtain CIP</a></li>
+                        </ul> -->
+                    </li>
+                    <!-- <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle disabled" routerLink="Blogg">Blog</a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="Blogg">Blog Grid View</a></li>
+                            <li><a routerLink="BlogDetail">Blog Detail</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="dropdown" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}">
+                        <a  data-toggle="dropdown" class="dropdown-toggle disabled" >Services</a>
+                        <ul class="dropdown-menu">
+                            <li routerLink="/web-home/Services"><a >Services</a></li>
+                            <li routerLink="/web-home/BookingFacilities"><a >Booking & Facilities</a></li>
+                        </ul>
+                    </li>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="/web-home/LocationFinder"  >Location Finder</a></li>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="/web-home/About">About Us</a></li>
+
+                </ul>
+            </div>
+        </div>
+          </div>
+
+          <div class="mobile-menu hidden-lg hidden-md">
+            <a href="index.html#mobile-menu"><i class="fa fa-navicon"></i></a>
+            <div id="mobile-menu">
+                <ul>
+                    <li class="mobile-title">
+                        <h4>Navigation</h4>
+                        <a routerLink="/" class="close"></a>
+                    </li>
+                    <li>
+                        <a routerLink="/">Home</a>
+                        <ul>
+                            <li><a routerLink="/">Home V1</a></li>
+                            <li><a routerLink="HomeV2">Home V2</a></li>
+                            <li><a routerLink="HomeV3">Home V3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a routerLink="BooksMediaListView">Books &amp; Media</a>
+                        <ul>
+                            <li><a routerLink="BooksMediaListView">Books &amp; Media List View</a></li>
+                            <li><a routerLink="BooksMediaGirdViewV1">Books &amp; Media Grid View V1</a></li>
+                            <li><a routerLink="BooksMediaGirdViewV2">Books &amp; Media Grid View V2</a></li>
+                            <li><a routerLink="BooksMediaDetailV1">Books &amp; Media Detail V1</a></li>
+                            <li><a routerLink="BooksMediaDetailV2">Books &amp; Media Detail V2</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a routerLink="NewsEventsListView">News &amp; Events</a>
+                        <ul>
+                            <li><a routerLink="NewsEventsListView">News &amp; Events List View</a></li>
+                            <li><a routerLink="NewsEventsDetail">News &amp; Events Detail</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a routerLink="/">Pages</a>
+                        <ul>
+                            <li><a routerLink="Cart">Cart</a></li>
+                            <li><a routerLink="Checkout">Checkout</a></li>
+                            <li><a routerLink="Signin">Signin/Register</a></li>
+                            <li><a routerLink="Error404">404/Error</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a routerLink="Blogg">Blog</a>
+                        <ul>
+                            <li><a routerLink="Blogg">Blog Grid View</a></li>
+                            <li><a routerLink="BlogDetail">Blog Detail</a></li>
+                        </ul>
+                    </li>
+                    <li><a routerLink="Services">Services</a></li>
+                    <li><a routerLink="Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+          </nav>
+       
+
+
+    </div>
+</header>
+<!-- End: Header Section -->
+
+<router-outlet></router-outlet>
+
+
+
+<!-- Start: Social Network -->
+<section class="social-network section-padding" >
+    <div class="container">
+        <div class="center-content">
+            <h2 class="section-title">Follow Us</h2>
+            <span class="underline center"></span>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-9">
+    
+        <ul >
+            <li>
+                <a class="facebook" routerLink="/" target="_blank">
+                    <span>
+                        <i class="fa fa-facebook-f"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="youtube" routerLink="/" target="_blank">
+                    <span>
+                        <i class="fa fa-youtube"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="twitter" routerLink="/" target="_blank">
+                    <span>
+                        <i class="fa fa-twitter"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="google" routerLink="/" target="_blank">
+                    <span>
+                        <i class="fa fa-google-plus"></i>
+                    </span>
+                </a>
+            </li>
+          
+            
+        </ul>
+
+         
+    </div>
+</div>   
+    </div>
+</section>
+<!-- End: Social Network -->
+
+
+<!-- Start: Newsletter -->
+<section class="newsletter section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="center-content">
+                    <h2 class="section-title">Subscribe to our Newsletters</h2>
+                    <span class="underline center"></span>
+                    <p class="lead">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Enter your Email!" id="newsletter" name="newsletter" type="email">
+                    <input class="form-control" value="Subscribe" type="submit">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Start: Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div id="footer-widgets">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 widget-container">
+                    <div id="text-2" class="widget widget_text">
+                        <h3 class="footer-widget-title">Contact Us For Support</h3>
+                        <span class="underline left"></span>
+                        <div class="textwidget">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking.
+                        </div>
+                        <address>
+                            <div class="info">
+                                <i class="fa fa-location-arrow"></i>
+                                <span>Thorpe Rd, Accra, Ghana P O Box GP 663</span>
+                            </div>
+                            <div class="info">
+                                <i class="fa fa-envelope"></i>
+                                <span><a href="mailto:support@libraria.com">support@library.gov.gh</a></span>
+                            </div>
+                            <div class="info">
+                                <i class="fa fa-phone"></i>
+                                <span><a href="tel:0302662796">+233 (0)302662796</a> / <a href="tel:0302665083">+233 (0)302665083</a></span>
+                            </div>
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 widget-container">
+                    <div id="nav_menu-2" class="widget widget_nav_menu">
+                        <h3 class="footer-widget-title">Quick Links</h3>
+                        <span class="underline left"></span>
+                        <div class="menu-quick-links-container">
+                            <ul id="menu-quick-links" class="menu">
+                                <li><a routerLink="/">Library News</a></li>
+                                <li><a routerLink="/">History</a></li>
+                                <li><a routerLink="/">Meet Our Staff</a></li>
+                                <li><a routerLink="/">Board of Trustees</a></li>
+                                <li><a routerLink="/">Budget</a></li>
+                                <li><a routerLink="/">Annual Report</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix hidden-lg hidden-md hidden-xs tablet-margin-bottom"></div>
+                <div class="col-md-2 col-sm-6 widget-container">
+                    <div id="text-4" class="widget widget_text">
+                        <h3 class="footer-widget-title">Timing</h3>
+                        <span class="underline left"></span>
+                        <div class="timming-text-widget">
+                            <time datetime="2017-02-13">Mon - Thu: 9 am - 9 pm</time>
+                            <time datetime="2017-02-13">Fri: 9 am - 6 pm</time>
+                            <time datetime="2017-02-13">Sat: 9 am - 5 pm</time>
+                            <time datetime="2017-02-13">Sun: 1 pm - 6 pm</time>
+                            <ul>
+                                <li><a routerLink="/">Closings</a></li>
+                                <li><a routerLink="/">Branches</a></li>
+                            </ul>
+                        </div>
+                    </div>			
+                </div>
+                <div class="col-md-4 col-sm-6 widget-container">
+                    <div class="widget twitter-widget">
+                        <h3 class="footer-widget-title">Latest Tweets</h3>
+                        <span class="underline left"></span>
+                        <div id="twitter-feed">
+                            <ul>
+                                <li>
+                                    <p><a routerLink="/">@TemplateLibraria</a> Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <a routerLink="/">template-libraria.com</a></p>
+                                </li>
+                                <li>
+                                    <p><a routerLink="/">@TemplateLibraria</a> Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <a routerLink="/">template-libraria.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>			
+                </div>
+            </div>
+        </div>                
+    </div>
+    <div class="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-text col-md-3">
+                    <p>&copy; 2017 LIBRARIA. All rights reserved.</p>
+                </div>
+                <div class="col-md-9 pull-right">
+                    <ul>
+                        <li><a routerLink = '/'>Home</a></li>
+                        <li><a routerLink="BooksMediaListView">Books &amp; Media</a></li>
+                        <li><a routerLink="NewsEventsListView">News &amp; Events</a></li>
+                        <li><a routerLink="/">Kids &amp; Teens</a></li>
+                        <li><a routerLink="Services">Services</a></li>
+                        <li><a routerLink="/">Research</a></li>
+                        <li><a routerLink="Blogg">Blog</a></li>
+                        <li><a routerLink="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End: Footer -->

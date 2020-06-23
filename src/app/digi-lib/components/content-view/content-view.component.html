@@ -1,0 +1,73 @@
+<div class="p-4 p-md-5 pt-5">
+    <div class="row">
+        <div class="col-md-12" style='text-align:left'>
+            <p style='font-weight:600; font-size:18px; color:#033600;'>{{contentDetails.title._text}}</p>
+        </div>
+    </div>
+
+    <div style='margin-bottom:40px;'>
+        <div class="row">
+            <div class="col-md-6" style='text-align:left'>
+                <p>Ebooks</p>
+            </div>
+
+            <div class="col-md-6" style='text-align:right'>
+                <p>See more</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div *ngFor="let ebook of ebooks" style="margin: 10px;" class="col-md-2">
+                <div [ngStyle]="{'background-image':'url('+ebook.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
+
+                </div>
+            </div>
+    </div>
+
+
+    <div style='margin-bottom:40px;'>
+        <div class="row">
+            <div class="col-md-6" style='text-align:left'>
+                <p>Audiobooks</p>
+            </div>
+
+            <div class="col-md-6" style='text-align:right'>
+                <p>See more</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div *ngFor="let audiobook of audioBooks" style="margin: 10px;" class="col-md-2">
+                <div [ngStyle]="{'background-image':'url('+audiobook.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
+
+                </div>
+            </div>
+    </div>
+
+
+
+    <div style='margin-bottom:40px;'>
+        <div class="row">
+            <div class="col-md-6" style='text-align:left'>
+                <p>Videos</p>
+            </div>
+
+            <div class="col-md-6" style='text-align:right'>
+                <p>See more</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div *ngFor="let video of videos" style="margin: 10px;" class="col-md-2">
+                <div [ngStyle]="{'background-image':'url('+video.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
