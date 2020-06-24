@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Route } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
-
+import { AngularEpubViewerModule } from 'angular-epub-viewer';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './digi-lib/components/home.component';
@@ -31,10 +31,14 @@ import { NewsEventsComponent } from './landing-website/components/news-events/ne
 import { ServicesComponent } from './landing-website/components/services/services.component';
 import { BookingFacilitiesComponent } from './landing-website/components/booking-facilities/booking-facilities.component';
 import { Erro404Component } from './landing-website/components/erro404/erro404.component';
-import { AudioPlayerComponent } from './digi-lib/components/digi-library/audio-player/audio-player.component';
 import { VideoPlayerComponent } from './digi-lib/components/digi-library/video-player/video-player.component';
 import { EpubReaderComponent } from './digi-lib/components/digi-library/epup-reader/epub-reader.component';
 import { ContentViewComponent } from './digi-lib/components/content-view/content-view.component';
+import { EbookDetailComponent } from './digi-lib/components/ebook-detail/ebook-detail.component';
+import { ReaderComponent } from './digi-lib/components/ebook-detail/reader/reader.component';
+import { AudiobookDetailComponent } from './digi-lib/components/audiobook-detail/audiobook-detail.component';
+import { VideoDetailComponent } from './digi-lib/components/video-detail/video-detail.component';
+
 // import { MapViewerComponent } from './routes/user-app/find-my-library/map-viewer/map-viewer.component';
 
 
@@ -78,10 +82,12 @@ const routes: Route[] = [
       { path: 'content', component: ContentViewComponent },
       { path: 'Branches', component: BranchesComponent },
       { path: 'Mapviewer', component: MapViewerComponent },
-      { path: 'Audio', component: AudioPlayerComponent },
       { path: 'Video', component: VideoPlayerComponent },
       { path: 'Epub', component: EpubReaderComponent },
-
+      { path: 'ebook-details', component: EbookDetailComponent },
+      { path: 'audiobook-details', component: AudiobookDetailComponent },
+      { path: 'video-details', component: VideoDetailComponent },
+      { path: 'reader', component: ReaderComponent },
     ]
   },
   { path: '', redirectTo: 'web-home', pathMatch: 'full' },
@@ -97,7 +103,8 @@ const routes: Route[] = [
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCF312eF8mXsWmzXxRxt-VX6HraOAyBXOQ'
-    })
+    }),
+    AngularEpubViewerModule
   ],
   declarations: [
     AppComponent,
@@ -121,10 +128,13 @@ const routes: Route[] = [
     ServicesComponent,
     BookingFacilitiesComponent,
     Erro404Component,
-    AudioPlayerComponent,
     VideoPlayerComponent,
     EpubReaderComponent,
-    ContentViewComponent
+    ContentViewComponent,
+    EbookDetailComponent,
+    ReaderComponent,
+    AudiobookDetailComponent,
+    VideoDetailComponent
 
   ],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { DataService } from './../../../services/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { IsoLanguages } from 'src/app/helpers/iso-languages';
+import { json2xml } from 'xml-js';
 
 @Component({
   selector: 'app-content-view',
@@ -184,149 +185,43 @@ export class ContentViewComponent implements OnInit {
 
 
       //  this.ebooks = res
-    }).then(() => {
-      this.data.pullFromFeed(this.audiobookurl).then(res => {
+    }).catch(e=>{
 
-        this.data.getFeedNavLinks().then(navLinks => {
-          this.audiobookNavLinks = navLinks
-        })
+    })
 
-        let audibk = res as any;
+    this.data.pullFromFeed(this.audiobookurl).then(res => {
 
-        try {
-          audibk.forEach(bk => {
-            let coverUrl
-            let playlist = []
-
-
-            bk.link.forEach(element => {
-              switch (element._attributes.type) {
-                case "image/jpeg":
-                case "image/png":
-
-                  coverUrl = element._attributes.href;
-                  break;
-
-                case "audio/mpeg":
-                case "audio/mp3":
-                  playlist.push(element._attributes.href)
-              }
-            });
-
-
-            let adbk;
-
-            try {
-              adbk = {
-                title: bk.title._text,
-                id: bk.id._text,
-                author: this.getAuthor(bk.author),
-                summary: bk.summary._text,
-                cover: coverUrl,
-                playlist: playlist,
-                publisher: bk['dcterms:publisher']._text,
-                language:  this.isoLanguages.getLanguageNameFromCode(bk['dcterms:language']._text)
-
-              }
-            } catch (error) {
-              adbk = {
-                title: bk.title._text,
-                id: bk.id._text,
-                author: this.getAuthor(bk.author),
-                summary: "No Description Available",
-                cover: coverUrl,
-                playlist: playlist,
-                publisher: bk['dcterms:publisher']._text,
-                language:  this.isoLanguages.getLanguageNameFromCode(bk['dcterms:language']._text)
-
-
-              }
-            }
-
-
-
-            this.audioBooks.push(adbk)
-            this.audiobooksLoading = false
-            this.audiobooksNavLinksLoaded = true
-
-
-          });
-        } catch (error) {
-          try {
-            let coverUrl
-            let playlist = []
-
-            audibk.link.forEach(element => {
-              switch (element._attributes.type) {
-                case "image/jpeg":
-                case "image/png":
-
-                  coverUrl = element._attributes.href;
-                  break;
-
-                case "audio/mpeg":
-                case "audio/mp3":
-                  playlist.push(element._attributes.href)
-              }
-            });
-
-
-            let adbk = {
-              title: audibk.title._text,
-              id: audibk.id._text,
-              author: this.getAuthor(audibk.author),
-              summary: audibk.summary._text,
-              cover: coverUrl,
-              playlist: playlist,
-              publisher: audibk['dcterms:publisher']._text,
-              language:  this.isoLanguages.getLanguageNameFromCode(audibk['dcterms:language']._text)
-
-
-            }
-
-            this.audioBooks.push(adbk)
-            this.audiobooksLoading = false
-            this.audiobooksNavLinksLoaded = true
-
-          } catch (error) {
-            this.audiobooksLoading = false
-            this.audioBooks = []
-            this.audiobooksNavLinksLoaded = false
-          }
-        }
-
-      }).catch(e => {
-
+      this.data.getFeedNavLinks().then(navLinks => {
+        this.audiobookNavLinks = navLinks
       })
-    }).then(() => {
-      this.data.pullFromFeed(this.videosUrl).then(res => {
-        this.data.getFeedNavLinks().then(navLinks => {
-          this.videosNavLinks = navLinks
-        })
-        let video = res as any;
 
-        // console.log(video)
+      let audibk = res as any;
 
-        try {
-          video.forEach(bk => {
-            let coverUrl
-            let playlist = []
-
-            bk.link.forEach(element => {
-              switch (element._attributes.type) {
-                case "image/jpeg":
-                case "image/png":
-
-                  coverUrl = element._attributes.href;
-                  break;
-
-                case "video/mp4":
-                  playlist.push(element._attributes.href)
-              }
-            });
+      try {
+        audibk.forEach(bk => {
+          let coverUrl
+          let playlist = []
 
 
-            let vd = {
+          bk.link.forEach(element => {
+            switch (element._attributes.type) {
+              case "image/jpeg":
+              case "image/png":
+
+                coverUrl = element._attributes.href;
+                break;
+
+              case "audio/mpeg":
+              case "audio/mp3":
+                playlist.push({url:element._attributes.href,title:element._attributes.title})
+            }
+          });
+
+
+          let adbk;
+
+          try {
+            adbk = {
               title: bk.title._text,
               id: bk.id._text,
               author: this.getAuthor(bk.author),
@@ -336,78 +231,186 @@ export class ContentViewComponent implements OnInit {
               publisher: bk['dcterms:publisher']._text,
               language:  this.isoLanguages.getLanguageNameFromCode(bk['dcterms:language']._text)
 
-              
-
             }
-
-
-
-            this.videosNavLinksLoaded = true
-            this.videos.push(vd)
-            this.videosLoading = false
-
-
-          });
-        } catch (error) {
-
-          try {
-            let coverUrl
-            let playlist = []
-
-            // console.log(video)
-
-            video.link.forEach(element => {
-              switch (element._attributes.type) {
-                case "image/jpeg":
-                case "image/png":
-
-                  coverUrl = element._attributes.href;
-                  break;
-
-                case "video/mp4":
-                  playlist.push(element._attributes.href)
-              }
-            });
-
-
-            let vd = {
-              title: video.title._text,
-              id: video.id._text,
-              author: this.getAuthor(video.author),
-              summary: video.summary._text,
+          } catch (error) {
+            adbk = {
+              title: bk.title._text,
+              id: bk.id._text,
+              author: this.getAuthor(bk.author),
+              summary: "No Description Available",
               cover: coverUrl,
               playlist: playlist,
-              publisher: video['dcterms:publisher']._text,
-              language:  this.isoLanguages.getLanguageNameFromCode(video['dcterms:language']._text)
+              publisher: bk['dcterms:publisher']._text,
+              language:  this.isoLanguages.getLanguageNameFromCode(bk['dcterms:language']._text)
 
 
             }
-
-            // console.log(vd)
-
-
-
-            this.videosNavLinksLoaded = true
-            this.videos.push(vd)
-            this.videosLoading = false
-
-
-          } catch (error) {
-            // console.log(error)
-            this.videosNavLinksLoaded = false
-            this.videos = []
-            this.videosLoading = false
           }
 
 
+
+          this.audioBooks.push(adbk)
+          this.audiobooksLoading = false
+          this.audiobooksNavLinksLoaded = true
+
+
+        });
+      } catch (error) {
+        try {
+          let coverUrl
+          let playlist = []
+
+          audibk.link.forEach(element => {
+            switch (element._attributes.type) {
+              case "image/jpeg":
+              case "image/png":
+
+                coverUrl = element._attributes.href;
+                break;
+
+              case "audio/mpeg":
+              case "audio/mp3":
+                playlist.push({url:element._attributes.href,title:element._attributes.title})
+            }
+          });
+
+
+          let adbk = {
+            title: audibk.title._text,
+            id: audibk.id._text,
+            author: this.getAuthor(audibk.author),
+            summary: audibk.summary._text,
+            cover: coverUrl,
+            playlist: playlist,
+            publisher: audibk['dcterms:publisher']._text,
+            language:  this.isoLanguages.getLanguageNameFromCode(audibk['dcterms:language']._text)
+
+
+          }
+
+          this.audioBooks.push(adbk)
+          this.audiobooksLoading = false
+          this.audiobooksNavLinksLoaded = true
+
+        } catch (error) {
+          this.audiobooksLoading = false
+          this.audioBooks = []
+          this.audiobooksNavLinksLoaded = false
+        }
+      }
+
+    }).catch(e => {
+
+    })
+
+    this.data.pullFromFeed(this.videosUrl).then(res => {
+      this.data.getFeedNavLinks().then(navLinks => {
+        this.videosNavLinks = navLinks
+      })
+      let video = res as any;
+
+      // console.log(video)
+
+      try {
+        video.forEach(bk => {
+          let coverUrl
+          let playlist = []
+
+          bk.link.forEach(element => {
+            switch (element._attributes.type) {
+              case "image/jpeg":
+              case "image/png":
+
+                coverUrl = element._attributes.href;
+                break;
+
+              case "video/mp4":
+                playlist.push({url:element._attributes.href,title:element._attributes.title})
+            }
+          });
+
+
+          let vd = {
+            title: bk.title._text,
+            id: bk.id._text,
+            author: this.getAuthor(bk.author),
+            summary: bk.summary._text,
+            cover: coverUrl,
+            playlist: playlist,
+            publisher: bk['dcterms:publisher']._text,
+            language:  this.isoLanguages.getLanguageNameFromCode(bk['dcterms:language']._text)
+
+            
+
+          }
+
+
+
+          this.videosNavLinksLoaded = true
+          this.videos.push(vd)
+          this.videosLoading = false
+
+
+        });
+      } catch (error) {
+
+        try {
+          let coverUrl
+          let playlist = []
+
+          // console.log(video)
+
+          video.link.forEach(element => {
+            switch (element._attributes.type) {
+              case "image/jpeg":
+              case "image/png":
+
+                coverUrl = element._attributes.href;
+                break;
+
+              case "video/mp4":
+                playlist.push({url:element._attributes.href,title:element._attributes.title})
+            }
+          });
+
+
+          let vd = {
+            title: video.title._text,
+            id: video.id._text,
+            author: this.getAuthor(video.author),
+            summary: video.summary._text,
+            cover: coverUrl,
+            playlist: playlist,
+            publisher: video['dcterms:publisher']._text,
+            language:  this.isoLanguages.getLanguageNameFromCode(video['dcterms:language']._text)
+
+
+          }
+
+          // console.log(vd)
+
+
+
+          this.videosNavLinksLoaded = true
+          this.videos.push(vd)
+          this.videosLoading = false
+
+
+        } catch (error) {
+          // console.log(error)
+          this.videosNavLinksLoaded = false
+          this.videos = []
+          this.videosLoading = false
         }
 
 
+      }
 
 
-      }).catch(e => {
 
-      })
+
+    }).catch(e => {
+
     })
 
   }
@@ -420,6 +423,18 @@ export class ContentViewComponent implements OnInit {
     } finally {
       // return "No Author Information"
     }
+  }
+
+  showDetails(ebook){
+    this.router.navigate(["/home/ebook-details"],{queryParams:{ebook:JSON.stringify(ebook)}})
+  }
+
+  showAudiobook(audiobook){
+    this.router.navigate(["/home/audiobook-details"],{queryParams:{audiobook:JSON.stringify(audiobook)}})
+  }
+
+  showVideo(video){
+    this.router.navigate(["/home/video-details"],{queryParams:{video:JSON.stringify(video)}})
   }
 
 

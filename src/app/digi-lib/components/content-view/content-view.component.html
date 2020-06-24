@@ -18,7 +18,7 @@
 
 
         <div class="row">
-            <div *ngFor="let ebook of ebooks" style="margin: 10px;" class="col-md-2">
+            <div (click)="showDetails(ebook)" *ngFor="let ebook of ebooks" style="margin: 10px;cursor: pointer;" class="col-md-2">
                 <div [ngStyle]="{'background-image':'url('+ebook.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
 
                 </div>
@@ -39,7 +39,7 @@
 
 
         <div class="row">
-            <div *ngFor="let audiobook of audioBooks" style="margin: 10px;" class="col-md-2">
+            <div (click)="showAudiobook(audiobook)" *ngFor="let audiobook of audioBooks" style="margin: 10px;" class="col-md-2">
                 <div [ngStyle]="{'background-image':'url('+audiobook.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
 
                 </div>
@@ -61,7 +61,7 @@
 
 
         <div class="row">
-            <div *ngFor="let video of videos" style="margin: 10px;" class="col-md-2">
+            <div (click)="showVideo(video)" *ngFor="let video of videos" style="margin: 10px;" class="col-md-2">
                 <div [ngStyle]="{'background-image':'url('+video.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
 
                 </div>

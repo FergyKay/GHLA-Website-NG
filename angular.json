@@ -57,7 +57,9 @@
               "src/library-resources/js/carousel.swipe.min.js",
               "src/library-resources/js/bxslider.min.js",
               "src/library-resources/js/main.js",
-              "src/library-resources/js/signin.js"
+              "src/library-resources/js/signin.js",
+              "node_modules/epubjs/build/epub.min.js",
+              "node_modules/jszip/dist/jszip.min.js"
 
             ]
           },

@@ -1,0 +1,37 @@
+<div class="p-1 p-md-3 pt-5" style='margin-top:-60px;'>
+    <div class="row">
+        <div class="col-md-12" style='padding:0px'>
+
+
+            <div class="containerr video-cover">
+                <video width="480" controls autoplay loop>
+                    <source src="{{videoSrc}}" />
+                    Your browser doesn't support HTML5 video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="col-md-12" style='padding:0px'>
+            <table>
+                <thead>
+                    <tr>
+
+                        <th style='width:90%;'>{{video.title}}</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="cursor: pointer;" (click)="videoSrc = track.url"  *ngFor="let track of video.playlist">
+
+                        <td><span>{{track.title}}</span></td>
+                        <td><i class="fa fa- fa-volume-up"></i></td>
+
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
