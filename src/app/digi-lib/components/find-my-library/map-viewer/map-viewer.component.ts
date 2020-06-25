@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {LocationFinderService} from '../../../../services/location-finder.service';
 
@@ -9,7 +10,16 @@ import {LocationFinderService} from '../../../../services/location-finder.servic
 export class MapViewerComponent implements OnInit {
   lat: number = 5.91841900;
   lng: number = 0.99035000;
-  constructor(private LocationFinderService: LocationFinderService) { }
+  zoom = 20
+  name;;
+
+  constructor(private activeRoute:ActivatedRoute) { 
+    this.activeRoute.queryParams.subscribe(params=>{
+      this.lat = parseFloat(params.lat);
+      this.lng = parseFloat(params.lng)
+      this.name = params.name
+    }).unsubscribe()
+  }
 
   ngOnInit(): void {
   }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { FeedParser } from '../injectors/feed-parser';
 import { ThrowStmt } from '@angular/compiler';
+import { error } from 'protractor';
 
 
 
@@ -125,15 +126,25 @@ export class DataService {
   //   })
   // }
 
-  // getRegions() {
-  //   return new Promise((resolve, reject) => {
-  //     this.httpHandler.request("GET", "countries/85", true).then(res => {
-  //       resolve(JSON.parse((<any>res).content))
-  //     }, rej => {
-  //       reject(rej)
-  //     })
-  //   })
-  // }
+    getLibrariesProtected(regionId) {
+    return new Promise((resolve, reject) => {
+      this.http.get(environment.apiEndpoint+"/libraries/1/branches?region_id=" + regionId).subscribe(res => {
+        resolve((<any>res))
+      }, error => {
+        reject(error)
+      })
+    })
+  }
+
+  getRegions() {
+    return new Promise((resolve, reject) => {
+      this.http.get(environment.apiEndpoint+"/countries/85").subscribe(res => {
+        resolve((<any>res).regions)
+      }, rej => {
+        reject(rej)
+      })
+    })
+  }
 
   // getProfile() {
   //   return new Promise((resolve, reject) => {

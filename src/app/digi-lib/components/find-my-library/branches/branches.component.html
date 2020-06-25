@@ -1,46 +1,33 @@
-
-      <div class="p-4 p-md-5 pt-5">
-          <div style='margin-bottom:40px;'>
-           <div class="row">
-             <div class="col-md-12" style='text-align:left'>
-               <p style='font-weight:600; font-size:18px; color:#033600;'>Select Library</p>
-             </div>
-           </div>
-          
-            <div class="row">
-              <div class="col-md-12">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <a routerLink="/components/Mapviewer" style='color:black;'>
-                        <p  style='height:5px; color:#033600; font-weight:600;'>Northern Regional Library</p>
-                        <p style='height:5px;'>BS-0021-5229</p>
-                        <p style='height:5px; font-size:12px;'>P.0 Box SY 124</p>
-                    </a>
-                    </li>
-
-                    <li class="list-group-item">
-                        <a routerLink="/components/Mapviewer"style='color:black;'>
-                        <p  style='height:5px; color:#033600; font-weight:600;'>Northern Regional Library</p>
-                        <p style='height:5px;'>BS-0021-5229</p>
-                        <p style='height:5px; font-size:12px;'>P.0 Box SY 124</p>
-                    </a>
-                    </li>
-
-                    <li class="list-group-item">
-                        <a routerLink="/components/Mapviewer" style='color:black;'>
-                        <p  style='height:5px; color:#033600; font-weight:600;'>Northern Regional Library</p>
-                        <p style='height:5px;'>BS-0021-5229</p>
-                        <p style='height:5px; font-size:12px;'>P.0 Box SY 124</p>
-                    </a>
-                    </li>
-                    
-                    
-                  </ul>
-                  
-               
-              </div>
-            </div>
-          
-          </div>
-    
+<div class="p-4 p-md-5 pt-5">
+  <div style='margin-bottom:40px;'>
+    <div class="row">
+      <div class="col-md-12" style='text-align:left'>
+        <p style='font-weight:600; font-size:18px; color:#033600;'>Select Library</p>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-group">
+          <li *ngFor="let library of libraries" class="list-group-item">
+            <a (click)="loadMap(library)" style='color:black;cursor: pointer;'>
+              <p style='height:5px; color:#033600; font-weight:600;'>{{library.name}}</p>
+              <p style='height:5px;'>{{library.gps_code}}</p>
+              <p style='height:5px; font-size:12px;'>{{library.address}}</p>
+            </a>
+          </li>
+
+
+
+
+
+
+        </ul>
+
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
