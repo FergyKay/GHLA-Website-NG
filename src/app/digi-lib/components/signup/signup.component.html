@@ -42,7 +42,7 @@
                <img src='../../../../../assets/logo/LOGO-TRANSPARENT.png' width='180'>
             </div>
 
-            <form class="form-md" (ngSubmit)="onSubmit()">
+            <form class="form-md" [formGroup]="signupForm">
                <div class='all-inputs'>
                   <div class="form-group">
                      <select id='branch_id' formControlName="branch_id" class="form-control custom-select" required>
@@ -109,7 +109,7 @@
                         <td>
                            <label class="container-checkbox form-check-label" style='margin-top:13px; '>I Accept Terms
                               and Conditions, Privacy Policy
-                              <input type="checkbox" class='form-check-input' checked="checked">
+                              <input type="checkbox" class='form-check-input' [checked]="termsAccepted" (change)="termsAccepted = !termsAccepted">
                               <span class="checkmark"></span>
                            </label>
 
@@ -124,14 +124,14 @@
                </div>
 
                <div class='submit-btn'>
-                  <button type="submit" class="btn btn-primary" style='font-weight:600;'>SIGN UP</button>
+                  <button [disabled]="!signupForm.valid || termsAccepted == false" (click)="signup()" class="btn btn-primary" style='font-weight:600;'>SIGN UP</button>
                </div>
                <div style='margin-top:-10px;'>
                   <a style='color:black;'><label class="form-check-label" for="exampleCheck1"
                         style='font-size:15px;  font-weight:600; color:rgb(145, 145, 145);'>Already a member?</label>
-                     <label class="form-check-label" for="exampleCheck1"
-                        style='margin-left:10px; font-size:18px; color:#033600; font-weight:700;'
-                        routerLink="/Signin">Sign In</label></a>
+                     <label (click)="navigateTo('signin')" class="form-check-label" for="exampleCheck1"
+                        style='margin-left:10px; font-size:18px; color:#033600; font-weight:700;cursor: pointer;'
+                        routerLink="/signin">Sign In</label></a>
                </div>
             </form>
 

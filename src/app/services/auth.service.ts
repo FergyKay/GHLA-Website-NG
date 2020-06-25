@@ -37,6 +37,17 @@ export class AuthenticationService {
 
   }
 
+
+  signup(signupBody){
+    return new Promise((resolve, reject) => {
+      this.http.post(environment.apiEndpoint + '/auth/signup', signupBody).subscribe(res => {
+        resolve(res)
+      }, err => {
+        reject(err)
+      })
+    })
+  }
+
   public getToken(): string {
     return localStorage.getItem('grant');
   }

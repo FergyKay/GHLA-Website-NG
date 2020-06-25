@@ -1,16 +1,18 @@
-import { Component, OnInit} from '@angular/core';
+import { DataService } from './../../../services/data.service';
+import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/auth.service';
+import { rejects } from 'assert';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
-  providers: [ DatePipe ]
+  providers: [DatePipe]
 })
 
 
@@ -27,25 +29,38 @@ export class SignupComponent implements OnInit {
   professions;
   libraries;
   requests;
-  
+
   data = [];
 
+  termsAccepted =false
 
-  constructor(private datePipe: DatePipe, private http:HttpClient, public fb: FormBuilder, public router: Router) {}
+
+  constructor(public router: Router, private dataService: DataService,private auth:AuthenticationService) {
+
+  }
 
 
-  ngOnInit(): void{
+  ngOnInit(): void {
 
-    this.gender = [
-      {
-        "id": "M",
-        "name": "Male",
-    },
-    {
-        "id": "F",
-        "name": "Female",
-    },
-    ]
+    this.dataService.getLibraries().then(libs => {
+      this.branches = libs
+
+      this.gender = [
+        {
+          "id": "M",
+          "name": "Male",
+        },
+        {
+          "id": "F",
+          "name": "Female",
+        },
+      ]
+    })
+
+    this.dataService.getProfessions().then(prof => {
+      this.professions = prof
+    })
+
 
     // this.professions = this.auth.fetchProfessions();
     // this.libraries = this.auth.fetchLibraries().pipe(map((response: any)  => response)).subscribe(result => {
@@ -65,40 +80,43 @@ export class SignupComponent implements OnInit {
 
 
     this.signupForm = new FormGroup({
-      'branch_id': new FormControl((null), [Validators.required]),
-      'name': new FormControl('', [Validators.required]),
-      'town': new FormControl('', [Validators.required]),
-      'dob': new FormControl('', [Validators.required]),
+      'branch_id': new FormControl(null, [Validators.required]),
+      'name': new FormControl(null, [Validators.required]),
+      'town': new FormControl(null, [Validators.required]),
+      'dob': new FormControl(null, [Validators.required]),
       'gender': new FormControl(null, [Validators.required]),
-      'phone': new FormControl('',[Validators.maxLength(10),Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10), Validators.required]),
+      'phone': new FormControl(null, [Validators.maxLength(10), Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10), Validators.required]),
       'profession_id': new FormControl(null, [Validators.required]),
-      'email': new FormControl('',[Validators.required, Validators.email]),
-     });
- 
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+    });
 
 
-      
+
+
   }
 
 
 
-
-
-  onSubmit(){
-    // this.auth.signUp(this.signupForm.value).subscribe((res) => {
-    //   if (res.result) {
-    //     this.signupForm.reset()
-    //     this.router.navigate(['Signin']);
-    //   }
-    // })
-
-  delete this.signupForm.value.terms
-  this.http.post('https://api.ghanalibrary.org/auth/signup',this.signupForm.value).subscribe((result)=>{
-    console.warn("result", result);
-  })
-  
+  signup(){
+    this.auth.signup(this.signupForm.value).then(res=>{
+      if((res as any).status==206){
+        alert((res as any).errors)
+      }else{
+        
+        alert('Account created. Check your mail')
+        this.router.navigate(['signin'])
+      } 
+     
+    },reject=>{
+      alert(reject)
+    })
+   
   }
-  
+
+  navigateTo(route) {
+    this.router.navigate([route])
+  }
+
 
 
 
