@@ -1,6 +1,5 @@
-
 <div class="bg">
-  <div class="row details">
+   <div class="row details">
       <div class="col-md-8">
          <div class="col-md-12" style='margin-bottom:120px;'>
             <div class="row">
@@ -18,11 +17,11 @@
          </div>
 
          <div class="col-md-9" style='margin-bottom:560px;'>
-            
-            
+
+
          </div>
 
-         <div class="col-md-9" >
+         <div class="col-md-9">
             <div class="row">
                <div class="col-md-4">
                   <h1 style='font-size:25px; font-weight: 600; color:#033600;'>Privacy Policy</h1>
@@ -40,95 +39,101 @@
       <div class="col-md-4">
          <div class='container'>
             <div style='width:100%; text-align:center;'>
-            <img src='../../../../../assets/logo/LOGO-TRANSPARENT.png' width='180'>
-            </div>
-        
-          <form class="form-md"   (ngSubmit)="onSubmit()">
-             <div class='all-inputs'>
-            <div class="form-group">
-              <select id='branch_id' formControlName="branch_id" class="form-control custom-select" required  >
-                <option [value]= "branch.id" *ngFor="let branch of branches">{{branch.name}}</option>
-              </select>
-              <label class='label' for="branch_id">Select Home Library</label>
-              
-            </div>
-            <div class="form-group">
-              <input id="form_name1" class="form-control" type="text"  formControlName="name"  required>
-              <label class='label' for="form_name1">Name</label>
-             
+               <img src='../../../../../assets/logo/LOGO-TRANSPARENT.png' width='180'>
             </div>
 
-            <div class="form-group">
-              
-              <input id='town' formControlName="town" class="form-control" required>
-              <label class='label' for="town">City</label>
-             
-            </div>
+            <form class="form-md" (ngSubmit)="onSubmit()">
+               <div class='all-inputs'>
+                  <div class="form-group">
+                     <select id='branch_id' formControlName="branch_id" class="form-control custom-select" required>
+                        <option [value]="branch.id" *ngFor="let branch of branches">{{branch.name}}</option>
+                     </select>
+                     <label class='label' for="branch_id">Select Home Library</label>
 
-            <div class="form-group">
-              <input id="dob" class="form-control" type="date" formControlName="dob"  required>
-              <label class='label' for="dob">Date of Birth</label>
-              
-            </div>
+                  </div>
+                  <div class="form-group">
+                     <input id="form_name1" class="form-control" type="text" formControlName="name" required>
+                     <label class='label' for="form_name1">Name</label>
 
-            <div class="form-group">
-              <select formControlName="gender" class="custom-select" required>
-                <option id='gender' [value] = "sex.id" *ngFor="let sex of gender">{{sex.name}}</option>
-              </select>
-             
-              <label class='label' for="gender">Gender</label>
-              
-            </div>
+                  </div>
 
-            <div class="form-group">
-              <input id="phone" class="form-control" type="tel" formControlName="phone"  required>
-              <label class='label' for="phone">Phone Number</label>
-            </div>
+                  <div class="form-group">
 
-            <div class="form-group">
-              <select id='profession_id' formControlName="profession_id" class="custom-select" required >
-                <option [value] = "profession.id" *ngFor="let profession of professions | async">{{profession.name}}</option>
-              </select>
-              
-              <!-- <span class="iconn fa fa-sort-desc fa-lg" ></span> -->
-        
-              <label class='label' for="profession_id">Profession</label>
-              
-            </div>
+                     <input id='town' formControlName="town" class="form-control" required>
+                     <label class='label' for="town">City</label>
 
-            <div class="form-group">
-              <input id="email" class="form-control" type="email" formControlName="email" required>
-              <label class='label' for="email">Email Address</label>
-              
-            </div>
-         </div>
+                  </div>
 
-            <div class="form-group">
-               <table style='width:80%; margin:-2% auto;'>
-                  <tr>
-                  <td >
-                     <label class="container-checkbox form-check-label"  style='margin-top:13px; '>I Accept Terms and Conditions, Privacy Policy
-                        <input type="checkbox" class='form-check-input' checked="checked" >
-                        <span class="checkmark"></span>
-                      </label>
+                  <div class="form-group">
+                     <input id="dob" class="form-control" type="date" formControlName="dob" required>
+                     <label class='label' for="dob">Date of Birth</label>
 
-                     </td>
+                  </div>
 
-                  <td style='text-align:right'>
-                     
-                  </td>
-               </tr>
-               </table>
+                  <div class="form-group">
+                     <select formControlName="gender" class="custom-select" required>
+                        <option id='gender' [value]="sex.id" *ngFor="let sex of gender">{{sex.name}}</option>
+                     </select>
 
-            </div>
+                     <label class='label' for="gender">Gender</label>
 
-            <div class='submit-btn'>
-               <button type="submit"   class="btn btn-primary" style='font-weight:600;'>SIGN UP</button>
+                  </div>
+
+                  <div class="form-group">
+                     <input id="phone" class="form-control" type="tel" formControlName="phone" required>
+                     <label class='label' for="phone">Phone Number</label>
+                  </div>
+
+                  <div class="form-group">
+                     <select id='profession_id' formControlName="profession_id" class="custom-select" required>
+                        <option [value]="profession.id" *ngFor="let profession of professions">{{profession.name}}
+                        </option>
+                     </select>
+
+                     <!-- <span class="iconn fa fa-sort-desc fa-lg" ></span> -->
+
+                     <label class='label' for="profession_id">Profession</label>
+
+                  </div>
+
+                  <div class="form-group">
+                     <input id="email" class="form-control" type="email" formControlName="email" required>
+                     <label class='label' for="email">Email Address</label>
+
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <table style='width:80%; margin:-2% auto;'>
+                     <tr>
+                        <td>
+                           <label class="container-checkbox form-check-label" style='margin-top:13px; '>I Accept Terms
+                              and Conditions, Privacy Policy
+                              <input type="checkbox" class='form-check-input' checked="checked">
+                              <span class="checkmark"></span>
+                           </label>
+
+                        </td>
+
+                        <td style='text-align:right'>
+
+                        </td>
+                     </tr>
+                  </table>
+
+               </div>
+
+               <div class='submit-btn'>
+                  <button type="submit" class="btn btn-primary" style='font-weight:600;'>SIGN UP</button>
                </div>
                <div style='margin-top:-10px;'>
-                <a style='color:black;'><label class="form-check-label" for="exampleCheck1" style='font-size:15px;  font-weight:600; color:rgb(145, 145, 145);'>Already a member?</label> <label class="form-check-label" for="exampleCheck1" style='margin-left:10px; font-size:18px; color:#033600; font-weight:700;' routerLink="/Signin">Sign In</label></a>
-             </div>
-          </form>
+                  <a style='color:black;'><label class="form-check-label" for="exampleCheck1"
+                        style='font-size:15px;  font-weight:600; color:rgb(145, 145, 145);'>Already a member?</label>
+                     <label class="form-check-label" for="exampleCheck1"
+                        style='margin-left:10px; font-size:18px; color:#033600; font-weight:700;'
+                        routerLink="/Signin">Sign In</label></a>
+               </div>
+            </form>
 
 
          </div>
@@ -147,4 +152,3 @@
 
 
 </div>
-

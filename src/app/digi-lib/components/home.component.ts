@@ -86,6 +86,12 @@ export class HomeComponent implements OnInit {
   routeToCoursesView(link){
       this.router.navigate(["/home/Courseselection"],{queryParams:{url:encodeURI(link)}})
   }
+
+
+  logout(){
+    localStorage.clear()
+    window.location.reload()
+  }
 }
 
 

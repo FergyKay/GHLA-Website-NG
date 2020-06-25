@@ -1,8 +1,10 @@
+import { AuthGuard } from './guards/auth.guard';
+import { HttpInterceptor } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Route } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
 import { AngularEpubViewerModule } from 'angular-epub-viewer';
@@ -38,6 +40,10 @@ import { EbookDetailComponent } from './digi-lib/components/ebook-detail/ebook-d
 import { ReaderComponent } from './digi-lib/components/ebook-detail/reader/reader.component';
 import { AudiobookDetailComponent } from './digi-lib/components/audiobook-detail/audiobook-detail.component';
 import { VideoDetailComponent } from './digi-lib/components/video-detail/video-detail.component';
+import { CommonModule } from '@angular/common';
+import { HttpInterceptorService } from './services/http-interceptor.service';
+import { DeviceDetectorModule } from 'ngx-device-detector';
+import { SigninGuard } from './guards/signin.guard';
 
 // import { MapViewerComponent } from './routes/user-app/find-my-library/map-viewer/map-viewer.component';
 
@@ -62,15 +68,16 @@ const routes: Route[] = [
 
     ]
   },
-  { path: 'Signin', component: SigninComponent },
-  { path: 'Signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent,canActivate:[SigninGuard] },
+  { path: 'signup', component: SignupComponent },
 
   {
     path: 'home',
     component: HomeComponent,
+    canActivate:[AuthGuard],
     children: [
-      { path: '', redirectTo: 'Signinhome', pathMatch: 'full' },
-      { path: 'Signinhome', component: SigninHomeComponent },
+      { path: '', redirectTo: 'discover', pathMatch: 'full' },
+      { path: 'discover', component: SigninHomeComponent },
       { path: 'Myshelf', component: MyShelfComponent },
       { path: 'Changepassword', component: ChangePasswordComponent },
       { path: 'Findmylibrary', component: FindMyLibraryComponent },
@@ -98,8 +105,11 @@ const routes: Route[] = [
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-unversal' }),
     BrowserAnimationsModule,
+    CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    // DeviceDetectorModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCF312eF8mXsWmzXxRxt-VX6HraOAyBXOQ'
@@ -134,9 +144,18 @@ const routes: Route[] = [
     EbookDetailComponent,
     ReaderComponent,
     AudiobookDetailComponent,
-    VideoDetailComponent
+    VideoDetailComponent,
+    SigninComponent,
+    SignupComponent
 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ]
 })
 export class AppModule { }
