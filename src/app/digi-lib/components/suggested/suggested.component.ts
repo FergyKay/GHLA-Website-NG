@@ -1,3 +1,5 @@
+import { element } from 'protractor';
+import { DataService } from './../../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuggestedComponent implements OnInit {
 
-  constructor() { }
+  vendors = []
+
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
+    this.data.getVendors().then(vendrs =>{
+
+      let v: [] = (vendrs as any).data
+
+       v.forEach(element => {
+          if((element as any).vendor_feed_type !== "OPDS"){
+         
+              this.vendors.push(element)
+          }
+      });
+
+
+    })
+  }
+
+  openVendorUrl(url){
+    window.open(url,"_blank")
   }
 
 }

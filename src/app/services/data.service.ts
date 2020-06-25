@@ -174,13 +174,13 @@ export class DataService {
   //   return this.user
   // }
 
-  // getVendors() {
-  //   return new Promise(resolve => {
-  //     this.httpHandler.reqExt("GET", 'http://142.11.195.10/digital_library/api/v0/vendors').then(res => {
-  //       resolve(res)
-  //     })
-  //   })
-  // }
+  getVendors() {
+    return new Promise(resolve => {
+      this.http.get('http://142.11.195.10/digital_library/api/v0/vendors').subscribe(res => {
+        resolve(res)
+      })
+    })
+  }
 
 
   // getEvents() {
