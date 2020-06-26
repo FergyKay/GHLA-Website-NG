@@ -20,8 +20,8 @@ import { cpuUsage } from 'process';
 export class SigninComponent implements OnInit {
 
   loginForm = new FormGroup({
-    username: new FormControl('efergusonarthur@gmail.com', Validators.required),
-    password: new FormControl('shattawale', [Validators.required, Validators.minLength(4)])
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', [Validators.required, Validators.minLength(4)])
 
   })
 
