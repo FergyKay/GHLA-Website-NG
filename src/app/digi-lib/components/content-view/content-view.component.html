@@ -24,9 +24,9 @@
                 <p>Ebooks</p>
             </div>
 
-            <div class="col-md-6" style='text-align:right'>
-                <p>See more</p>
-            </div>
+            <div *ngIf="ebookNavLinksLoaded" class="col-md-6" style='text-align:right;cursor: pointer;'>
+                <p (click)="seeAll('ebook')" style="cursor: pointer;">See more</p>
+              </div>
         </div>
 
 
@@ -47,9 +47,9 @@
                     <p>Audiobooks</p>
                 </div>
 
-                <div class="col-md-6" style='text-align:right'>
-                    <p>See more</p>
-                </div>
+                <div *ngIf="audiobooksNavLinksLoaded" class="col-md-6" style='text-align:right;cursor: pointer;'>
+                    <p (click)="seeAll('audiobook')" style="cursor: pointer;">See more</p>
+                  </div>
             </div>
 
 
@@ -71,9 +71,9 @@
                         <p>Videos</p>
                     </div>
 
-                    <div class="col-md-6" style='text-align:right'>
-                        <p>See more</p>
-                    </div>
+                    <div *ngIf="videosNavLinksLoaded" class="col-md-6" style='text-align:right;cursor: pointer;'>
+                        <p (click)="seeAll('video')" style="cursor: pointer;">See more</p>
+                      </div>
                 </div>
 
 

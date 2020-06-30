@@ -541,6 +541,44 @@ export class ContentViewComponent implements OnInit {
 
   }
 
+  seeAll(mediaType) {
+    switch (mediaType) {
+      case 'ebook':
+        // console.log(this.ebookNavLinks)
+        this.router.navigate(['/home/more'], {
+          queryParams: {
+            navLinks: JSON.stringify(this.ebookNavLinks),
+            mediaType: "Popular Ebooks"
+          }, relativeTo: this.activatedRoute
+        })
+
+
+        break;
+
+      case 'audiobook':
+        this.router.navigate(['/home/more'], {
+          queryParams: {
+            navLinks: JSON.stringify(this.audiobookNavLinks),
+            mediaType: "Popular Audiobooks"
+          }, relativeTo: this.activatedRoute
+        })
+
+
+        break;
+
+
+      case 'video':
+        this.router.navigate(['/home/more'], {
+          queryParams: {
+            navLinks: JSON.stringify(this.videosNavLinks),
+            mediaType: "Popular Videos"
+          }, relativeTo: this.activatedRoute
+        })
+
+        break;
+    }
+  }
+
 
 
 

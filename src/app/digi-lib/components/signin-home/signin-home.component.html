@@ -6,7 +6,7 @@
         <p>Recently Added</p>
       </div>
 
-      <div class="col-md-6" style='text-align:right'>
+      <div *ngIf="recentEbookNavLinksLoaded" class="col-md-6" style='text-align:right'>
         <p (click)="seeAllRecentEbooks()" style="cursor: pointer;">See more</p>
       </div>
     </div>
@@ -34,7 +34,7 @@
         <p>Popular E-books</p>
       </div>
 
-      <div class="col-md-6" style='text-align:right'>
+      <div *ngIf="popularEbookNavLinksLoaded" class="col-md-6" style='text-align:right'>
         <p (click)="seeAll('ebook')" style="cursor: pointer;">See more</p>
       </div>
     </div>
@@ -54,11 +54,11 @@
   <!---Popular Audio books-->
   <div style='margin-bottom:40px;'>
     <div class="row">
-      <div class="col-md-6" style='text-align:left'>
+      <div  class="col-md-6" style='text-align:left'>
         <p>Popular Audio books</p>
       </div>
 
-      <div class="col-md-6" style='text-align:right;cursor: pointer;'>
+      <div *ngIf="popularAudibooksLinksLoaded" class="col-md-6" style='text-align:right;cursor: pointer;'>
         <p (click)="seeAll('audiobook')" style="cursor: pointer;">See more</p>
       </div>
     </div>
@@ -81,7 +81,7 @@
         <p>Popular Videos</p>
       </div>
 
-      <div class="col-md-6" style='text-align:right'>
+      <div *ngIf="popularVideosLinksLoaded" class="col-md-6" style='text-align:right'>
         <p (click)="seeAll('video')" style="cursor: pointer;">See more</p>
       </div>
     </div>
