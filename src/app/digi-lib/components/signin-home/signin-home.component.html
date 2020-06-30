@@ -1,241 +1,103 @@
+<div class="p-4 p-md-5 pt-5">
+  <!---Recently Added-->
+  <div style='margin-bottom:40px;'>
+    <div class="row">
+      <div class="col-md-6" style='text-align:left'>
+        <p>Recently Added</p>
+      </div>
 
-       <div class="p-4 p-md-5 pt-5">
-        <!---Recently Added-->
-            <div style='margin-bottom:40px;'>
-             <div class="row">
-               <div class="col-md-6" style='text-align:left'>
-                 <p>Recently Added</p>
-               </div>
-      
-               <div class="col-md-6" style='text-align:right'>
-                <p>See more</p>
-              </div>
-             </div>
-            
-      
-             <div class="row">
-               <div class="col-md-2" >
-                  <div class='item-display-cards'>
-      
-                  </div>
-               </div>
-      
-               <div class="col-md-2">
-                <div class='item-display-cards'>
-      
-                </div>
-      
-              </div>
-      
-      
-              <div class="col-md-2">
-                <div class='item-display-cards'>
-      
-                </div>
-      
-              </div>
-      
-              <div class="col-md-2">
-                <div class='item-display-cards'>
-      
-                </div>
-      
-              </div>
-      
-              <div class="col-md-2">
-                <div class='item-display-cards'>
-      
-                </div>
-      
-              </div>
-      
-              <div class="col-md-2">
-                <div class='item-display-cards'>
-      
-                </div>
-      
-              </div>
-             </div>
-            </div>
-      
-      
-             <!---Popular E-books-->
-            <div style='margin-bottom:40px;'>
-              <div class="row">
-                <div class="col-md-6" style='text-align:left'>
-                  <p>Popular E-books</p>
-                </div>
-       
-                <div class="col-md-6" style='text-align:right'>
-                 <p>See more</p>
-               </div>
-              </div>
-             
-       
-              <div class="row">
-                <div class="col-md-2" >
-                   <div class='item-display-cards'>
-       
-                   </div>
-                </div>
-       
-                <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-              </div>
-            </div>
-      
-      
-      
-             <!---Popular Videos-->
-             <div style='margin-bottom:40px;'>
-              <div class="row">
-                <div class="col-md-6" style='text-align:left'>
-                  <p>Popular Videos</p>
-                </div>
-       
-                <div class="col-md-6" style='text-align:right'>
-                 <p>See more</p>
-               </div>
-              </div>
-             
-       
-              <div class="row">
-                <div class="col-md-2" >
-                   <div class='item-display-cards'>
-       
-                   </div>
-                </div>
-       
-                <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-              </div>
-            </div>
-      
-      
-            <!---Popular Audio books-->
-            <div style='margin-bottom:40px;'>
-              <div class="row">
-                <div class="col-md-6" style='text-align:left'>
-                  <p>Popular Audio books</p>
-                </div>
-       
-                <div class="col-md-6" style='text-align:right'>
-                 <p>See more</p>
-               </div>
-              </div>
-             
-       
-              <div class="row">
-                <div class="col-md-2" >
-                   <div class='item-display-cards'>
-       
-                   </div>
-                </div>
-       
-                <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-       
-               <div class="col-md-2">
-                 <div class='item-display-cards'>
-       
-                 </div>
-       
-               </div>
-              </div>
-            </div>
-      
-            </div>
-      
-  
+      <div class="col-md-6" style='text-align:right'>
+        <p (click)="seeAllRecentEbooks()" style="cursor: pointer;">See more</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div (click)="showDetails(ebook)" *ngFor="let ebook of recentEbooks" style="margin: 2px;cursor: pointer;"
+        class="col-md-2">
+        <div [ngStyle]="{'background-image':'url('+ebook.cover+')'}" class='item-display-cards'>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+  <!---Popular E-books-->
+  <div style='margin-bottom:40px;'>
+    <div class="row">
+      <div class="col-md-6" style='text-align:left'>
+        <p>Popular E-books</p>
+      </div>
+
+      <div class="col-md-6" style='text-align:right'>
+        <p (click)="seeAll('ebook')" style="cursor: pointer;">See more</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div (click)="showDetails(ebook)" *ngFor="let ebook of popularEbooks" style="margin: 2px;cursor: pointer;"
+        class="col-md-2">
+        <div [ngStyle]="{'background-image':'url('+ebook.cover+')'}" class='item-display-cards'>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!---Popular Audio books-->
+  <div style='margin-bottom:40px;'>
+    <div class="row">
+      <div class="col-md-6" style='text-align:left'>
+        <p>Popular Audio books</p>
+      </div>
+
+      <div class="col-md-6" style='text-align:right;cursor: pointer;'>
+        <p (click)="seeAll('audiobook')" style="cursor: pointer;">See more</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div (click)="showAudiobook(audiobook)" *ngFor="let audiobook of popularAudiobooks"
+        style="margin: 2px;cursor: pointer;" class="col-md-2">
+        <div [ngStyle]="{'background-image':'url('+audiobook.cover+')'}" class='item-display-cards'>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---Popular Videos-->
+  <div style='margin-bottom:40px;'>
+    <div class="row">
+      <div class="col-md-6" style='text-align:left'>
+        <p>Popular Videos</p>
+      </div>
+
+      <div class="col-md-6" style='text-align:right'>
+        <p (click)="seeAll('video')" style="cursor: pointer;">See more</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div (click)="showVideo(video)" *ngFor="let video of popularVideos" style="margin: 2px;cursor: pointer;"
+        class="col-md-2">
+        <div [ngStyle]="{'background-image':'url('+video.cover+')'}" class='item-display-cards'>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

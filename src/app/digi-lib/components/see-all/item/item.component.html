@@ -1,0 +1,12 @@
+<div (click)="viewDetails()" style="margin: 5px;color: black;width: 200px;height: 350px; background-color: white;padding: 1px;border-radius: 2px;border-width: 0.11px;border-color: rgb(214, 214, 214);cursor: pointer;" >
+    <img stretch="aspectFill" row="0" src="{{parsedBook.cover}}"
+        style="height:300px;width:95%;background-color: gray;margin: 3px;">
+    <div style="vertical-align: middle;" row="1">
+        <p textWrap="true" style="font-size: 11px;font-weight: bold;">{{parsedBook.title}}</p>
+        <p style="font-size: 10;margin-top: 3px;" >{{parsedBook.author}}</p>
+        <p style="font-size: 7;margin-top: 3px;font-weight: bold;">{{mediaType}}</p>
+    </div>
+    <div  row="2" style="width: 1%;height: 90%;">
+
+    </div>
+</div>

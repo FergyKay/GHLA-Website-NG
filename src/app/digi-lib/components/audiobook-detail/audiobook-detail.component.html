@@ -5,7 +5,7 @@
 
             <div [ngStyle]="{'background-image':'url('+audiobook.cover+')'}" class="containerr video-cover">
                 <audio width="480" controls>
-                    <source src="https://opds.ghanalibrary.org/audio?id=97b2cb9212aaa799c3d97027c6d38de1" type="audio/mpeg">
+                    <source src="{{playlist[0].url}}" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let track of audiobook.playlist">
+                    <tr *ngFor="let track of playlist">
                         <td><span></span> <span> {{track.title}}</span></td>
                         <!-- <td><i class="fa fa- fa-volume-up"></i></td> -->
                     </tr>

@@ -1,7 +1,20 @@
 <div class="p-4 p-md-5 pt-5">
+    <p (click)="pushNvLink(category._attributes.href,category._attributes.title)"
+        style="color: black;margin: 3;font-size: 14; padding: 5;background-color: white;border-width: 0.1;border-radius: 5;border-color: gray;cursor: pointer;"
+        *ngFor="let category of feedNavigationLinks" >{{category._attributes.title}}</p>
+
+        <ng-container *ngIf="navigationStack.length>0">
+            <p
+                style="color: white;margin: 3;font-size: 14; padding: 5;background-color: #033600;border-width: 1;border-radius: 5;border-color: transparent;"
+                *ngFor="let category of navigationStack">{{category.title}}</p>
+            <a (click)="popNavStack()" style="color: red;cursor: pointer;" col="1">X</a>
+        </ng-container>
+   
+
+
     <div class="row">
         <div class="col-md-12" style='text-align:left'>
-            <p style='font-weight:600; font-size:18px; color:#033600;'>{{contentDetails.title._text}}</p>
+            <p style='font-weight:600; font-size:18px; color:#033600;'>{{courseName}}</p>
         </div>
     </div>
 
@@ -18,56 +31,62 @@
 
 
         <div class="row">
-            <div (click)="showDetails(ebook)" *ngFor="let ebook of ebooks" style="margin: 10px;cursor: pointer;" class="col-md-2">
-                <div [ngStyle]="{'background-image':'url('+ebook.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
-
-                </div>
-            </div>
-    </div>
-
-
-    <div style='margin-bottom:40px;'>
-        <div class="row">
-            <div class="col-md-6" style='text-align:left'>
-                <p>Audiobooks</p>
-            </div>
-
-            <div class="col-md-6" style='text-align:right'>
-                <p>See more</p>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div (click)="showAudiobook(audiobook)" *ngFor="let audiobook of audioBooks" style="margin: 10px;" class="col-md-2">
-                <div [ngStyle]="{'background-image':'url('+audiobook.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
-
-                </div>
-            </div>
-    </div>
-
-
-
-    <div style='margin-bottom:40px;'>
-        <div class="row">
-            <div class="col-md-6" style='text-align:left'>
-                <p>Videos</p>
-            </div>
-
-            <div class="col-md-6" style='text-align:right'>
-                <p>See more</p>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div (click)="showVideo(video)" *ngFor="let video of videos" style="margin: 10px;" class="col-md-2">
-                <div [ngStyle]="{'background-image':'url('+video.cover+')'}"  style="background-position: center;background-size: cover;" class='item-display-cards'>
+            <div (click)="showDetails(ebook)" *ngFor="let ebook of ebooks"
+                style="margin: 10px;cursor: pointer;cursor: pointer;" class="col-md-2">
+                <div [ngStyle]="{'background-image':'url('+ebook.cover+')'}"
+                    style="background-position: center;background-size: cover;" class='item-display-cards'>
 
                 </div>
             </div>
         </div>
-    </div>
 
 
-</div>
+        <div style='margin-bottom:40px;'>
+            <div class="row">
+                <div class="col-md-6" style='text-align:left'>
+                    <p>Audiobooks</p>
+                </div>
+
+                <div class="col-md-6" style='text-align:right'>
+                    <p>See more</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div (click)="showAudiobook(audiobook)" *ngFor="let audiobook of audioBooks"
+                    style="margin: 10px;cursor: pointer;" class="col-md-2">
+                    <div [ngStyle]="{'background-image':'url('+audiobook.cover+')'}"
+                        style="background-position: center;background-size: cover;" class='item-display-cards'>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div style='margin-bottom:40px;'>
+                <div class="row">
+                    <div class="col-md-6" style='text-align:left'>
+                        <p>Videos</p>
+                    </div>
+
+                    <div class="col-md-6" style='text-align:right'>
+                        <p>See more</p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div (click)="showVideo(video)" *ngFor="let video of videos" style="margin: 10px;cursor: pointer;"
+                        class="col-md-2">
+                        <div [ngStyle]="{'background-image':'url('+video.cover+')'}"
+                            style="background-position: center;background-size: cover;" class='item-display-cards'>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>

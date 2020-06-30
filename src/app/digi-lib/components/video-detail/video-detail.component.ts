@@ -11,14 +11,18 @@ export class VideoDetailComponent implements OnInit {
   video;
   videoSrc;
 
+  playlist;
+
   constructor(private activeroute:ActivatedRoute) { 
     this.activeroute.queryParams.subscribe(params=>{
         this.video = JSON.parse(params.video)
+
+        this.playlist = JSON.parse(this.video.playlist)
     })
   }
 
   ngOnInit(): void {
-    this.videoSrc = this.video.playlist[0].url
+    this.videoSrc = this.playlist[0].url
   }
 
 }

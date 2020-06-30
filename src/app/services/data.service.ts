@@ -15,7 +15,7 @@ import { error } from 'protractor';
 })
 
 export class DataService {
-  feedUrl = "https://opds.ghanalibrary.org"
+  feedUrl = "https://opds.ghanalibrary.org/v2/catalog.atom"
 
   feedParser = new FeedParser(this.http)
   

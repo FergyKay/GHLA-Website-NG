@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
 
   isSuperNavClicked = false
   isSubNavClicked = false
+  navigationLinks: unknown;
+  ebooksUrl: any;
+  audioboksUrl: any;
+  videosUrl: any;
 
 
 
@@ -92,6 +96,54 @@ export class HomeComponent implements OnInit {
     localStorage.clear()
     window.location.reload()
   }
+
+  showContent(hrefToForms,targetName) {
+
+    // let loader = new Loader();
+    // loader.show()
+
+    // setTimeout(()=>{
+    //   loader.hide()
+    // },10000);
+
+
+    this.dataService.pullFromFeed(hrefToForms).then(entries => {
+
+      this.dataService.getFeedNavLinks().then(links=>{
+        this.navigationLinks = links
+        // console.log(this.navigationLinks)
+      
+
+        this.ebooksUrl = entries[0].link._attributes.href;
+        this.audioboksUrl = entries[1].link._attributes.href;
+        this.videosUrl = entries[2].link._attributes.href;
+
+
+        // console.log(this.ebooksUrl)
+
+      
+
+
+        this.router.navigate(['/home/content'], {
+          queryParams: {
+            initial:hrefToForms,
+            title: targetName,
+            ebooks: this.ebooksUrl,
+            audiobooks: this.audioboksUrl,
+            videos: this.videosUrl,
+            navLinks:JSON.stringify(this.navigationLinks)
+          }
+        })
+
+      })
+
+    
+    }).catch(err=>{
+      // loader.hide()
+    })
+
+  }
+
 }
 
 

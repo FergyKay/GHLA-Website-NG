@@ -8,32 +8,15 @@
     </div>
     <div class="p-4 pt-5">
 
-      <h1><a href="index.html" class="logo"><img src='../../../../../assets/logo/LOGO-TRANSPARENT.png' width='180'></a>
+      <h1><a routerLink="/home" class="logo"><img src='../../../../../assets/logo/LOGO-TRANSPARENT.png' width='180'></a>
       </h1>
       <ul class="list-unstyled components mb-5">
         <li class="active">
           <a href="#discoverSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle ">Discover</a>
           <ul class="collapse list-unstyled " id="discoverSubmenu">
             <li *ngFor="let level of superNavigationLevel">
-              <a (click)="navClicked(level)" href="#discoverSub-submenu1" data-toggle="collapse" aria-expanded="false"
+              <a (click)="showContent(level.link._attributes.href,level.title._text)" href="#discoverSub-submenu1" data-toggle="collapse" aria-expanded="false"
                 class="dropdown-toggle">{{level.title._text}}</a>
-              <ul id='discoverSub-submenu1' class="collapse list-unstyled">
-                <ng-container *ngIf="isSuperNavClicked && subNavTarget === level.title._text">
-                  <li *ngFor="let subNav of subNavLinks">
-                    <a (click)="subNavClicked(subNav)" href="#discoverSub-submenu3" data-toggle="collapse" aria-expanded="false"
-                      class="dropdown-toggle">{{subNav.title._text}}</a>
-
-                     
-                    <ul class="collapse list-unstyled" id="discoverSub-submenu3">
-                      <ng-container *ngIf="isSubNavClicked && subSubNavTarget === subNav.title._text">
-                        <li *ngFor="let subSubNav of subSubNavLinks">
-                          <a (click)="subSubNavClicked(subSubNav)">{{subSubNav.title._text}}</a>
-                        </li>
-                      </ng-container>
-                    </ul>
-                  </li>
-                </ng-container> 
-              </ul>
             </li>
 
           </ul>
@@ -42,9 +25,9 @@
         <li>
           <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Account</a>
           <ul class="collapse list-unstyled" id="pageSubmenu">
-            <li>
+            <!-- <li>
               <a routerLinkActive="active" routerLink="/home/Myshelf">My Shelf</a>
-            </li>
+            </li> -->
             <li>
               <a routerLinkActive="active" routerLink="/home/Findmylibrary">Find My Library</a>
             </li>

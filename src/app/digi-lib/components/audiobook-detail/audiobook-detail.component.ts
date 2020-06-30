@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AudiobookDetailComponent implements OnInit {
   audiobook;
+  playlist;
 
   constructor(private activeroute:ActivatedRoute) { 
     this.activeroute.queryParams.subscribe(params=>{
         this.audiobook = JSON.parse(params.audiobook)
+        this.playlist = JSON.parse(this.audiobook.playlist)
+
     })
   }
 

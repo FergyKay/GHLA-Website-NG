@@ -16,13 +16,14 @@
                 <thead>
                     <tr>
 
-                        <th style='width:90%;'>{{video.title}}</th>
+                        <th style='width:10%;'>{{video.title}}</th>
+                        <th style='width:10%;'>{{video.author}}</th>
                         <th></th>
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr style="cursor: pointer;" (click)="videoSrc = track.url"  *ngFor="let track of video.playlist">
+                <tbody *ngIf="playlist.length > 1">
+                    <tr  style="cursor: pointer;" (click)="videoSrc = track.url"  *ngFor="let track of playlist">
 
                         <td><span>{{track.title}}</span></td>
                         <td><i class="fa fa- fa-volume-up"></i></td>

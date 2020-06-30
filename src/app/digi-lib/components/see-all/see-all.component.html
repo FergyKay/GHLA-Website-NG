@@ -1,0 +1,33 @@
+<div class="p-4 p-md-5 pt-5">
+    <!---Recently Added-->
+    <div style='margin-bottom:40px;'>
+        <div class="row">
+            <div class="col-md-6" style='text-align:left'>
+                <p>{{mediaType}}</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button *ngIf="self!==''" (click)="backToTop()">Start</button>
+            <button *ngIf="previous!==''" (click)="prevPage()">Previous</button>
+            <button *ngIf="next!==''" (click)="nextPage()">Next</button>
+        </div>
+
+
+        <div class="row">
+            <!-- <div *ngFor="let entry of entries" style="margin: 2px;cursor: pointer;"
+          class="col-md-2"> -->
+            <app-item [item]="entry" *ngFor="let entry of entries; let i = index"></app-item>
+            <!-- </div> -->
+
+
+
+
+        </div>
+    </div>
+   
+
+
+
+
+</div>

@@ -10,10 +10,12 @@ import { json2xml } from 'xml-js';
   styleUrls: ['./content-view.component.css', '../digi-library-assets/css/style.css']
 })
 export class ContentViewComponent implements OnInit {
-  contentDetails;
+
+  courseName;
   ebookUrl;
-  audiobookurl;
-  videosUrl;
+  audioBookUrl;
+  videoUrl;
+
 
   ebooks = []
   audioBooks = []
@@ -35,20 +37,47 @@ export class ContentViewComponent implements OnInit {
 
   isoLanguages = new IsoLanguages()
 
+  feedNavigationLinks = []
+
+
+  navigationStack = []
+
+  initial;
+  initialCourseName;
+
+
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,private data:DataService) { }
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
-      this.contentDetails = JSON.parse(params.meta)
-      this.ebookUrl = this.contentDetails.link[0]._attributes.href;
-      this.audiobookurl = this.contentDetails.link[1]._attributes.href;
-      this.videosUrl = this.contentDetails.link[2]._attributes.href;
+      this.courseName = params.title
+      this.ebookUrl = params.ebooks
+      this.audioBookUrl = params.audiobooks
+      this.videoUrl = params.videos
+
+      this.initial = params.initial
+      this.initialCourseName = params.title
+
+      this.feedNavigationLinks = []
+
+
+
+      JSON.parse(params.navLinks).forEach(element => {
+        if (element._attributes.rel === "http://opds-spec.org/facet") {
+          this.feedNavigationLinks.push(element)
+        }
+      });
+
       this.makeBulkRequest()
     })
   }
 
   makeBulkRequest() {
+
+    this.ebooks = []
+    this.audioBooks = []
+    this.videos = []
 
 
     this.data.pullFromFeed(this.ebookUrl).then(res => {
@@ -189,7 +218,7 @@ export class ContentViewComponent implements OnInit {
 
     })
 
-    this.data.pullFromFeed(this.audiobookurl).then(res => {
+    this.data.pullFromFeed(this.audioBookUrl).then(res => {
 
       this.data.getFeedNavLinks().then(navLinks => {
         this.audiobookNavLinks = navLinks
@@ -227,7 +256,7 @@ export class ContentViewComponent implements OnInit {
               author: this.getAuthor(bk.author),
               summary: bk.summary._text,
               cover: coverUrl,
-              playlist: playlist,
+              playlist:  JSON.stringify(playlist),
               publisher: bk['dcterms:publisher']._text,
               language:  this.isoLanguages.getLanguageNameFromCode(bk['dcterms:language']._text)
 
@@ -239,7 +268,7 @@ export class ContentViewComponent implements OnInit {
               author: this.getAuthor(bk.author),
               summary: "No Description Available",
               cover: coverUrl,
-              playlist: playlist,
+              playlist:  JSON.stringify(playlist),
               publisher: bk['dcterms:publisher']._text,
               language:  this.isoLanguages.getLanguageNameFromCode(bk['dcterms:language']._text)
 
@@ -281,7 +310,7 @@ export class ContentViewComponent implements OnInit {
             author: this.getAuthor(audibk.author),
             summary: audibk.summary._text,
             cover: coverUrl,
-            playlist: playlist,
+            playlist:  JSON.stringify(playlist),
             publisher: audibk['dcterms:publisher']._text,
             language:  this.isoLanguages.getLanguageNameFromCode(audibk['dcterms:language']._text)
 
@@ -303,7 +332,7 @@ export class ContentViewComponent implements OnInit {
 
     })
 
-    this.data.pullFromFeed(this.videosUrl).then(res => {
+    this.data.pullFromFeed(this.videoUrl).then(res => {
       this.data.getFeedNavLinks().then(navLinks => {
         this.videosNavLinks = navLinks
       })
@@ -336,7 +365,7 @@ export class ContentViewComponent implements OnInit {
             author: this.getAuthor(bk.author),
             summary: bk.summary._text,
             cover: coverUrl,
-            playlist: playlist,
+            playlist:  JSON.stringify(playlist),
             publisher: bk['dcterms:publisher']._text,
             language:  this.isoLanguages.getLanguageNameFromCode(bk['dcterms:language']._text)
 
@@ -380,7 +409,7 @@ export class ContentViewComponent implements OnInit {
             author: this.getAuthor(video.author),
             summary: video.summary._text,
             cover: coverUrl,
-            playlist: playlist,
+            playlist:  JSON.stringify(playlist),
             publisher: video['dcterms:publisher']._text,
             language:  this.isoLanguages.getLanguageNameFromCode(video['dcterms:language']._text)
 
@@ -436,6 +465,82 @@ export class ContentViewComponent implements OnInit {
   showVideo(video){
     this.router.navigate(["/home/video-details"],{queryParams:{video:JSON.stringify(video)}})
   }
+
+  pushNvLink(href, title) {
+    this.navigationStack.push({ link: href, title: title })
+    this.loadSubCategory(href, title)
+  }
+
+
+
+  popNavStack() {
+    // console.log(this.navigationStack.length)
+    try {
+      this.navigationStack.pop()
+      this.loadSubCategory(this.navigationStack[this.navigationStack.length - 1].link, this.navigationStack[this.navigationStack.length - 1].title)
+    } catch (error) {
+      // console.log(error)
+      // console.log(this.initialCourseName)
+      this.courseName = this.initialCourseName
+      this.loadSubCategory(this.initial, this.initialCourseName)
+    }
+
+  }
+
+  loadSubCategory(href, title) {
+    this.ebooksLoading = true
+    this.audiobooksLoading = true
+    this.videosLoading = true
+
+    this.feedNavigationLinks = []
+    // setTimeout(() => {
+    //   loader.hide()
+    // }, 15000)
+
+
+   
+    // loader.show()
+
+
+    this.data.pullFromFeed(href).then(entries => {
+
+      this.data.getFeedNavLinks().then(links => {
+        this.feedNavigationLinks = []
+
+
+        this.courseName = title
+        // this.initialCourseName = title
+
+
+
+        let navLinks = links as any;
+
+
+        navLinks.forEach(element => {
+
+          if (element._attributes.rel === "http://opds-spec.org/facet") {
+            this.feedNavigationLinks.push(element)
+          }
+
+        });
+
+
+        this.ebookUrl = entries[0].link._attributes.href;
+        this.audioBookUrl = entries[1].link._attributes.href;
+        this.videoUrl = entries[2].link._attributes.href;
+
+
+        this.makeBulkRequest()
+
+      })
+
+
+    }).catch(err => {
+     
+    })
+
+  }
+
 
 
 

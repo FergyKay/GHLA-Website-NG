@@ -44,6 +44,8 @@ import { CommonModule } from '@angular/common';
 import { HttpInterceptorService } from './services/http-interceptor.service';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { SigninGuard } from './guards/signin.guard';
+import { SeeAllComponent } from './digi-lib/components/see-all/see-all.component';
+import { ItemComponent } from './digi-lib/components/see-all/item/item.component';
 
 // import { MapViewerComponent } from './routes/user-app/find-my-library/map-viewer/map-viewer.component';
 
@@ -95,6 +97,7 @@ const routes: Route[] = [
       { path: 'audiobook-details', component: AudiobookDetailComponent },
       { path: 'video-details', component: VideoDetailComponent },
       { path: 'reader', component: ReaderComponent },
+      { path: 'more', component: SeeAllComponent },
     ]
   },
   { path: '', redirectTo: 'web-home', pathMatch: 'full' },
@@ -146,7 +149,10 @@ const routes: Route[] = [
     AudiobookDetailComponent,
     VideoDetailComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    SigninHomeComponent,
+    SeeAllComponent,
+    ItemComponent
 
   ],
   bootstrap: [AppComponent],
