@@ -1,0 +1,217 @@
+<div class='body'>
+  <div class="mobile-nav-overly"> <button type="button" class="mobile-nav-toggle mobile-nav-toggle1 d-lg-none"><i class="icofont-navigation-menu"></i></button></div>
+  <nav class='mobile-nav  d-lg-none'>
+    <ul>
+      <li class="home menui"><a routerLink='/'>Home</a></li>
+      <li><a href= "http://ils.ghanalibrary.org" target="_blank">Catalog</a></li>
+      <li class='events menui' [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="/web-home/Newsevents">News & Events</a></li>
+      <li class='drop-down'><a >Programmes</a>
+        <ul>
+            <!-- <li><a href='https://docs.google.com/forms/d/e/1FAIpQLSdMICagbXI65QiSor0r46D35veEtAqCOIXPJawga_v6Qn2odw/viewform' target="_blank">GhLA Scholastic</a></li> -->
+            <!-- <li><a href='https://ghanalibrary.org/library/shortstorychallenge/' target="_blank">National short story writing challenge</a></li> -->
+            <li style='margin-left:10px;'><a href='http://library.gov.gh/creativeartsclass/index.php' target="_blank">Creative Arts Class</a></li>
+            <li><a href='http://library.gov.gh/read2skill/index.php' target="_blank">Read2skill</a></li>
+          </ul>
+    </li>
+      <li class="drop-down" ><a>Purchases</a>
+        <ul>
+          <li style='margin-left:10px;'><a  href='http://library.gov.gh/isns/index.php' >ISBN Purchase</a></li>
+          <li><a  href='http://library.gov.gh/isns/index.php' >ISMN Purchase</a></li>
+          <li><a  href='http://library.gov.gh/isns/index.php' >ISSN Purchase</a></li>
+          <li><a  href='http://library.gov.gh/isns/index.php' >CIP Purchase</a></li>
+        </ul>
+      </li>
+      <li class='bf menui'><a routerLink="/web-home/BookingFacilities">Booking & Facilities</a></li>
+      <li class='lf menui' [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="/web-home/LocationFinder"  >Location Finder</a></li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}" class='ab menui'><a routerLink="/web-home/About">About</a></li>
+
+    </ul>
+
+  </nav>
+ 
+ <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top " >
+    <div class="d-flex align-items-center" >
+      <h3 class="logo mr-auto name" style='margin-left:40px;'><a routerLink="/" style='font-size:19px;'><img src="../../assets/logo/ghlaLogo.png" > Ghana Library Authority</a></h3>
+      <h3 class="logo mr-auto shortened" style='margin-left:10px;'><a routerLink="/"><img src="../../assets/logo/ghlaLogo.png" > GhLA</a></h3>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="../../assets/logo/ghlaLogo.png" alt="" class="img-fluid"></a>-->
+
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="home menui"><a routerLink='/'>Home</a></li>
+          <li><a href= "http://ils.ghanalibrary.org" target="_blank">Catalog</a></li>
+          <li class='events menui' [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="/web-home/Newsevents">News & Events</a></li>
+          <li class='drop-down'><a >Programmes</a>
+            <ul>
+            <!-- <li><a href='https://docs.google.com/forms/d/e/1FAIpQLSdMICagbXI65QiSor0r46D35veEtAqCOIXPJawga_v6Qn2odw/viewform' target="_blank">GhLA Scholastic</a></li> -->
+            <!-- <li><a href='https://ghanalibrary.org/library/shortstorychallenge/' target="_blank">National short story writing challenge</a></li> -->
+            <li style='margin-left:10px;'><a href='http://library.gov.gh/creativeartsclass/index.php' target="_blank">Creative Arts Class</a></li>
+            <li><a href='http://library.gov.gh/read2skill/index.php' target="_blank">Read2skill</a></li>
+              </ul>
+        </li>
+          <li class="drop-down" ><a>Purchases</a>
+            <ul>
+              <li style='margin-left:10px;'><a  href='http://library.gov.gh/isns/index.php' >ISBN Purchase</a></li>
+              <li><a  href='http://library.gov.gh/isns/index.php' >ISMN Purchase</a></li>
+              <li><a  href='http://library.gov.gh/isns/index.php' >ISSN Purchase</a></li>
+              <li><a  href='http://library.gov.gh/isns/index.php' >CIP Purchase</a></li>
+            </ul>
+          </li>
+          <li class='bf menui'><a routerLink="/web-home/BookingFacilities">Booking & Facilities</a></li>
+          <li class='lf menui' [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="/web-home/LocationFinder"  >Location Finder</a></li>
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}" class='ab menui'><a routerLink="/web-home/About">About</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+
+     <!--- <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="home menui"><a routerLink='/'>Home</a></li>
+          <li><a href= "http://ils.ghanalibrary.org" target="_blank">Catalog</a></li>
+          <li class='events menui' [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="/web-home/Newsevents">News & Events</a></li>
+          <li class='drop-down'><a >Programmes</a>
+            <ul>
+                <li><a href='https://docs.google.com/forms/d/e/1FAIpQLSdMICagbXI65QiSor0r46D35veEtAqCOIXPJawga_v6Qn2odw/viewform' target="_blank">GhLA Scholastic</a></li>
+                <li><a href='https://ghanalibrary.org/library/shortstorychallenge/' target="_blank">National short story writing challenge</a></li>
+                <li><a href='https://ghanalibrary.org/library/creativeartsclass/' target="_blank">Creative Arts Class</a></li>
+                <li><a href='https://ghanalibrary.org/library/read2skill/' target="_blank">Read to skill</a></li>
+              </ul>
+        </li>
+          <li class="drop-down" ><a>Purchases</a>
+            <ul>
+              <li><a  href='http://library.gov.gh/isns/index.php' >ISBN Purchase</a></li>
+              <li><a  href='http://library.gov.gh/ismn/index.php' >ISSN Purchase</a></li>
+              <li><a  href='http://library.gov.gh/isns/index.php' >ISSN Purchase</a></li>
+              <li><a  href='http://library.gov.gh/isns/index.php' >CIP Purchase</a></li>
+            </ul>
+          </li>
+          <li class='bf menui'><a routerLink="/web-home/BookingFacilities">Booking & Facilities</a></li>
+          <li class='lf menui' [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}"><a routerLink="/web-home/LocationFinder"  >Location Finder</a></li>
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact: true}" class='ab menui'><a routerLink="/web-home/About">About</a></li>
+
+        </ul>
+      </nav>--><!-- .nav-menu -->
+
+      <a  routerLinkActive="active" routerLink="/signin" class="get-started-btn scrollto name"><i class="icofont-library"></i> Digital Library</a>
+      <a  routerLinkActive="active" routerLink="/signin" class="get-started-btn scrollto shortened"><i class="icofont-library"></i> Digi Library</a>
+      <button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
+    </div>
+
+   
+  </header><!-- End Header -->
+
+<router-outlet></router-outlet>
+
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    
+
+    <div class="footer-newsletter" >
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Subscribe To Our Newsletter</h4>
+            <p>Subscribe to get the best and latest updates from Ghana Library Authority.</p>
+            <form [formGroup]="newsletterSubscribe" (ngSubmit)="newsletterSubscription(newsletterSubscribe.value)">
+              <input placeholder="Type your Email Address" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="eg. example@example.com" formControlName="email" required><input type="submit" value="Subscribe" [disabled]="!newsletterSubscribe.valid">
+            </form>
+            <div class="alert alert-success" style='margin-top:10px; display:none;'>
+              <strong>Success!</strong> you have been subscribed to receive latest updates.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>GhLA</h3>
+            <p>Ghana Library Authority</p>
+              <p> P O Box GP 663</p>
+               <p>Thorpe Rd, Accra, Ghana </p>
+               <p>Ghana Post GPS Address GA-183-1723</p>
+               <br>
+              <div class="row">
+                <div class="col-md-2">
+                  <strong>Phone:</strong>
+                </div>
+                <div class="col-md-10">
+                  <a href="tel:0302662796" > +233 (0)302662796</a> / <br> <a href="tel:0302665083">+233 (0)302665083</a>
+                </div>
+              </div> <br>
+              <p><strong>Email:</strong>  <a href="mailto:support@library.gov.g"> support@library.gov.gh</a><br>
+            </p>
+          </div>
+<table style="margin: 0% auto; width:400px">
+  <tr>
+    <td>
+      <div class="col-lg-12 col-md-12 footer-links" >
+        <h4>Useful Links</h4>
+        <ul >
+            <li><i class="bx bx-chevron-right"></i><a routerLink="/web-home/Newsevents">Library News</a></li>
+            <li><i class="bx bx-chevron-right"></i><a routerLink="/web-home/About">About</a></li>
+            <li><i class="bx bx-chevron-right"></i><a href= "http://ils.ghanalibrary.org" target="_blank">Catalog</a></li>
+            <li><i class="bx bx-chevron-right"></i><a href='http://library.gov.gh/isns/index.php'>ISNS Purchase</a></li>
+            <li><i class="bx bx-chevron-right"></i><a routerLink="/web-home/LocationFinder">Location Finder</a></li>
+        </ul>
+      </div>
+    </td>
+
+    <td>
+
+      <div class="col-lg-12 col-md-12 footer-links">
+        <h4>Timing</h4>
+        <ul >
+           
+          <li><i class="bx bx-chevron-right"></i> <a> <time datetime="2017-02-13">Mon - Fri: 9 am - 5 pm</time></a></li>
+          <li><i class="bx bx-chevron-right"></i> <a><time datetime="2017-02-13">Sat: 9 am - 1 pm</time></a></li>
+          <li><i class="bx bx-chevron-right"></i> <a> <time datetime="2017-02-13">Sun: Closed</time></a></li>
+          <!-- <li><i class="bx bx-chevron-right"></i> <a routerLink="/web-home/LocationFinder" style='color:white;'> Branches</a></li> -->
+        
+        </ul>
+      </div>
+    </td>
+  </tr>
+</table>
+
+    
+
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Follow Us</h4>
+            <p>Follow us on our social media handles.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/ghanalibraries" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://web.facebook.com/ghanalibraries?_rdc=1&_rdr" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/ghanalibraries/?hl=en" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCXUjas3Yw8i1H-3sdok-puw" target="_blank" class="google-plus"><i class="bx bxl-youtube"></i></a>
+              <a href="https://www.linkedin.com/organization-guest/company/ghanalibraries?trk=similar-pages_result-card_full-click&challengeId=AQFpoXtjfRG85AAAAXNMwODJCKbi_-H_3526KmdvhrWKRzz_d_za53TI1drUGyCBjrH7Bnl4otv7EGtJiOEXYKLaGGJPbXbEDA&submissionId=cb135208-ea95-2116-5928-cc23ba0de745" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright" style='text-align:center;'>
+        &copy; Copyright <strong><span>Ghana Library Authority 2020</span></strong>. All Rights Reserved
+      </div>
+    
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+</div>

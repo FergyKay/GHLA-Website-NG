@@ -1,0 +1,70 @@
+
+  
+  audio {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .containerr {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    background: url(../../../../assets/digi-library/background-img/audio-background.jpg), #6DB3F2;
+    background-size: cover;
+  }
+  
+  .video-cover audio {
+    object-fit: cover;
+  }
+  
+  .book-cover{
+    height:100%; 
+    width:300px; 
+    border:1px solid black; 
+    margin:0% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: none;
+    text-align: left;
+    padding: 20px;
+    padding-left: 50px;
+    color:rgb(90, 90, 90);
+  }
+  
+  
+
+table tbody tr:first-child td {
+    color: #033600;
+    font-size:16px;
+    font-weight:600;
+ }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .modal-full {
+    min-width: 100%;
+    margin: 0;
+    background: rgba(255, 255, 255, 0);
+  background-size: cover;
+    
+}
+
+.modal{
+    background:none;
+    /* url(../.././../../assets/digi-library/background-img/audio-background.jpg) */
+    background-size: cover;
+}

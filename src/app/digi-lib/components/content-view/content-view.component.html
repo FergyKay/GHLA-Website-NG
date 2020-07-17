@@ -1,0 +1,167 @@
+<div class="row">
+    <div class="col-md-2">
+
+        <nav aria-label="breadcrumb" style='box-shadow: 1px 1px 4px 1px rgb(202, 202, 202);'>
+            <ol class="breadcrumb bg-dark ">
+              <li class="breadcrumb-item "><a  class="text-light" style='font-size:14px'>{{courseName}}</a></li>
+            </ol>
+          </nav>
+          
+    </div>
+
+    <div class="col-md-10">
+        <nav aria-label="breadcrumb" style='box-shadow: 1px 1px 4px 1px rgb(202, 202, 202);'>
+            <ol class="breadcrumb  ">
+              <li class="breadcrumb-item" *ngFor="let category of feedNavigationLinks"> <a (click)="pushNvLink(category._attributes.href,category._attributes.title)" class="text-dark" style='cursor: ponter;'>{{category._attributes.title}}</a></li>
+            </ol>
+          </nav>
+        
+          <ng-container *ngIf="navigationStack.length>0">
+        
+            <nav aria-label="breadcrumb" style='box-shadow: 1px 1px 4px 1px rgb(202, 202, 202);'>
+                <ol  class="breadcrumb  ">
+                  <li *ngFor="let category of navigationStack" class="breadcrumb-item "><a (click)="popNavStack()" class="text-success" style='font-weight:600;'>{{category.title}}</a></li>
+                </ol>
+              </nav>
+        </ng-container>
+        
+    </div>
+</div>
+
+
+
+<div class="p-4 p-md-5 pt-5">
+        <div class="row">
+            <div class="col-md-12" style="margin:1% auto; ">
+
+             <div class="row">
+
+               <div class="col-md-6" style='text-align:left'>
+                 <p style='font-weight: 500;'>E-books</p>
+               </div>
+         
+               <div *ngIf="ebookNavLinksLoaded" class="col-md-6" style='text-align:right'>
+                 <p (click)="seeAll('ebook')" style="cursor: pointer;">See more</p>
+               </div>
+             </div>
+         
+            <div style='overflow: scroll; padding: 0px;  box-shadow: 0px 2px rgb(243, 243, 243);'>
+                <div id="grid" class="row-fluid" style='max-width:80%; '>
+
+                  <table  style='max-width:100%; '>
+                    <tr class="e-file-loader e-file-loader0">
+                    </tr>
+                  </table>
+
+                    <div (click)="showDetails(ebook)" *ngFor="let ebook of ebooks"  style="cursor: pointer;" class="mix col-sm-2 page1 page4 margin30">
+                        <div class="item-img-wrap "  [ngStyle]="{'background-image':'url('+ebook.cover+')'}">
+                         
+                            <div class="item-img-overlay">
+                                <a class="show-image">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div> 
+                       </div>
+                    </div>
+                                                                  
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-12" style="margin:0% auto; ">
+
+           <div class="row">
+
+
+
+
+             <div class="col-md-6" style='text-align:left'>
+               <p style='font-weight: 500;'>Audiobooks</p>
+             </div>
+       
+             <div *ngIf="audiobooksNavLinksLoaded" class="col-md-6" style='text-align:right'>
+               <p (click)="seeAll('ebook')" style="cursor: pointer;">See more</p>
+             </div>
+           </div>
+       
+          <div style='overflow: scroll;  padding: 0px; box-shadow: 0px 2px rgb(243, 243, 243);'>
+              <div id="grid" class="row-fluid" style='max-width:80%; '>
+
+                <table  style='max-width:100%; '>
+                  <tr class="e-file-loader e-file-loader1">
+                  </tr>
+                </table>
+
+                  <div (click)="showAudiobook(audiobook)" *ngFor="let audiobook of audioBooks"  style="cursor: pointer;" class="mix col-sm-2 page1 page4 margin30">
+                      <div class="item-img-wrap "  [ngStyle]="{'background-image':'url('+audiobook.cover+')'}">
+
+
+                       <div class="loader">
+                            <svg id="wave" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 38.05">
+                              <title>Audio Wave</title>
+                              <path id="Line_1" data-name="Line 1" d="M0.91,15L0.78,15A1,1,0,0,0,0,16v6a1,1,0,1,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H0.91Z"/>
+                              <path id="Line_2" data-name="Line 2" d="M6.91,9L6.78,9A1,1,0,0,0,6,10V28a1,1,0,1,0,2,0s0,0,0,0V10A1,1,0,0,0,7,9H6.91Z"/>
+                              <path id="Line_3" data-name="Line 3" d="M12.91,0L12.78,0A1,1,0,0,0,12,1V37a1,1,0,1,0,2,0s0,0,0,0V1a1,1,0,0,0-1-1H12.91Z"/>
+                              <path id="Line_4" data-name="Line 4" d="M18.91,10l-0.12,0A1,1,0,0,0,18,11V27a1,1,0,1,0,2,0s0,0,0,0V11a1,1,0,0,0-1-1H18.91Z"/>
+                              <path id="Line_5" data-name="Line 5" d="M24.91,15l-0.12,0A1,1,0,0,0,24,16v6a1,1,0,0,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H24.91Z"/>
+                            </svg>
+                            </div>
+
+                          <div class="item-img-overlay">
+                              <a  class="show-image">
+                                  <span></span>
+                              </a>
+                          </div>
+                      </div> 
+                     </div>
+                  </div>
+                                                                
+              </div>
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12" style="margin:1% auto; ">
+
+         <div class="row">
+
+
+
+
+           <div class="col-md-6" style='text-align:left'>
+             <p style='font-weight: 500;'>Videos</p>
+           </div>
+     
+           <div *ngIf="videosNavLinksLoaded" class="col-md-6" style='text-align:right'>
+             <p (click)="seeAll('ebook')" style="cursor: pointer;">See more</p>
+           </div>
+         </div>
+     
+        <div style='overflow: scroll;  padding: 0px; box-shadow: 0px 2px rgb(243, 243, 243);'>
+            <div id="grid" class="row-fluid" style='max-width:80%; '>
+              <table  style='max-width:100%; '>
+                <tr class="e-file-loader e-file-loader2">
+                </tr>
+              </table>
+
+                <div (click)="showVideo(video)" *ngFor="let video of videos"  style="cursor: pointer;" class="mix col-sm-5 page1 page4 margin30">
+                    <div class="item-img-wrap "  [ngStyle]="{'background-image':'url('+video.cover+')'}" >
+                      <div class="loader">
+                          <i class='fa fa-play-circle fa-4x' style='margin-top:0px; font-size:80px; color: rgb(255, 255, 255)'></i>
+                          </div>
+                        <div class="item-img-overlay">
+                            <a  class="show-image">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div> 
+                   </div>
+                </div>
+                                                              
+            </div>
+        </div>
+    </div>

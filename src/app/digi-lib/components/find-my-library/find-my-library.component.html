@@ -1,0 +1,30 @@
+
+    <div class="p-4 p-md-5 pt-5">
+        <div style='margin-bottom:40px;'>
+         <div class="row">
+           <div class="col-md-12" style='text-align:left'>
+             <p style='font-weight:600; font-size:18px; color:#033600;'>Select Region</p>
+           </div>
+         </div>
+        
+          <div class="row">
+            <div class="col-md-12">
+
+
+             <ul class='list-group e-file-loader'>
+
+             </ul>
+             
+          
+              <ul class="list-group regions">
+                <li  *ngFor="let region of regions" class="list-group-item" ><a routerLinkActive="active" (click)="loadLibrariesForRegionWithId(region.id)" style='color:black;'>{{region.name}}</a>
+                
+                </li>
+             
+              </ul>
+            </div>
+          </div>
+        
+        </div>
+  
+  </div>

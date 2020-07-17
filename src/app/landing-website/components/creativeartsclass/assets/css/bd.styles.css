@@ -1,0 +1,261 @@
+/*
+*************************************************
+
+SEBASTIAN NITU
+Main baseDemo Styles
+
+Created by Sebastian Nitu
+http://www.sebnitu.com
+
+*************************************************
+*/
+
+/*-------------------------------------------
+	@Reset
+---------------------------------------------*/
+
+    
+
+nav ul { list-style: none; }
+
+
+
+
+
+/*-------------------------------------------
+	@Structure
+---------------------------------------------*/
+
+body {
+	
+	padding: 0; margin: 0;
+}
+
+.wrapper {
+	/*max-width: 870px;*/
+	padding: 5px 0 0 0;
+	margin: 0 auto;
+    background: #4389a3;
+	/* Transition */
+	-webkit-transition: padding 1s ease-in-out;
+	-moz-transition: padding 1s ease-in-out;
+	-o-transition: padding 1s ease-in-out;
+	-ms-transition: padding 1s ease-in-out;
+	transition: padding 1s ease-in-out;
+    margin-top: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 95%;
+}
+
+
+
+
+@media only screen and (max-width: 769px) {
+	
+	.wrapper {
+		padding: 0;
+	}
+	.page {
+		/* Border Radius */
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+	
+}
+
+/**
+ * Clearfix
+ */
+.clearfix:before, .clearfix:after {
+	content: "\0020"; display: block; height: 0; visibility: hidden;	
+} 
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/*-------------------------------------------
+	@Typography
+---------------------------------------------*/
+
+body {
+	font: 14px/20px helvetica, arial, sans-serif;
+	color: #606060;
+}
+h1, h2, h3, h4, h5, h6 {}
+a {
+	color: #dd390d;
+	text-decoration: none;
+}
+
+pre {
+	font: 13px/22px 'Courier New', Courier, Monaco, monospace;
+	background: #efefef;
+	border: 1px solid #e0e0e0;
+	color: #303030;
+	padding: 20px;
+	margin: 20px 0;
+	overflow: auto;
+	/* Border Radius */
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+blockquote {
+	background: #efefef;
+	border: 1px solid #e0e0e0;
+	padding: 10px 20px;
+	margin: 20px 0;
+	/* Border Radius */
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+
+
+
+/*-------------------------------------------
+	@Navigation
+---------------------------------------------*/
+
+
+/**
+ * Responsive
+ */
+@media only screen and (max-width: 769px) {
+	
+.nav ul li:last-child a {
+		/* Border Radius */
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+	
+}
+
+@media only screen and (max-width: 450px) {
+.nav {
+		float: left; width: 100%;
+	}
+.nav ul {
+		float: left; width: 100%;
+		margin: 0; padding: 0;
+		/* Gradient */
+		background-image: linear-gradient(bottom, rgb(221,58,13) 0%, rgb(233,105,37) 100%);
+		background-image: -o-linear-gradient(bottom, rgb(221,58,13) 0%, rgb(233,105,37) 100%);
+		background-image: -moz-linear-gradient(bottom, rgb(221,58,13) 0%, rgb(233,105,37) 100%);
+		background-image: -webkit-linear-gradient(bottom, rgb(221,58,13) 0%, rgb(233,105,37) 100%);
+		background-image: -ms-linear-gradient(bottom, rgb(221,58,13) 0%, rgb(233,105,37) 100%);
+		background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0, rgb(221,58,13)),
+			color-stop(1, rgb(233,105,37))
+		);
+	}
+.nav ul li {
+		width: 33%;
+	}
+.nav ul li:last-child {
+		width: 34%;
+	}
+.nav ul li a, .nav ul li.download a {
+		padding-left: 0;
+		padding-right: 0;
+	}
+.nav ul li:first-child a {
+		/* Border Radius */
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+.nav ul li.download a img {
+		display: none;
+	}
+}
+
+
+/*-------------------------------------------
+	@Tabs
+---------------------------------------------*/
+
+/**
+ * Tab Nav
+ */
+.tabs {
+	font-size: 13px; line-height: 20px;
+}
+.tabs ul:before, .tabs ul:after {
+	content: "\0020"; display: block; height: 0; visibility: hidden;	
+} 
+.tabs ul:after { clear: both; }
+.tabs ul {
+	padding: 0 7%;
+	border-bottom: 1px solid #db8686;
+	zoom: 1;
+    
+}
+
+.tabs ul li {
+	position: relative;
+	float: left;
+	margin: 0;
+}
+.tabs ul li a {
+	background: #e3e3e3;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	border-bottom: 1px solid #db8686;
+	color: #909090;
+	text-shadow: 0 1px 0 rgba(255,255,255, 0.75);
+	padding: 6px 18px; margin: 0 5px -1px 0;
+	/* Border Radius */
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.tabs ul li a:hover {
+	border-color: #ccc;
+	color: #606060;
+}
+.tabs ul li.active a {
+	background: #fff;
+	border-color: #d4d4d4;
+	border-bottom: 1px solid #fff;
+	color: #dd390d;
+	margin-top: -4px;
+	padding-top: 10px;
+}
+
+/**
+ * Panels
+ */
+.panels {}
+.panel {
+padding:0px;
+    
+}
+
+
+
+@media only screen and (max-width: 450px) {
+
+.tabs ul li {
+width: 25%;
+}
+.tabs ul li a {
+padding-left: 0;
+padding-right: 0;
+}
+.tabs ul li:last-child a {
+margin-right: 0;
+}
+
+}

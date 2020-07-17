@@ -1,0 +1,11 @@
+.modal-full {
+    min-width: 100%;
+    margin: 0%;
+    
+}
+
+.modal-content{
+    background: url(../../../../../assets/digi-library/background-img/audio-background.jpg);
+    background-size: cover;
+}
+

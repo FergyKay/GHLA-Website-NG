@@ -1,0 +1,66 @@
+.banner{
+    height:340px;
+    /* background: url(../../../../assets/CARD_NO_DET.png); */
+    background-position: 0px -410px ;
+    background-size: cover;
+    background-repeat: no-repeat;
+   text-align:center;
+   padding:30px;
+}
+  
+.profile-pic {
+    max-width: 160px;
+    height: 125px;
+    display: block;
+}
+
+.file-upload {
+    display: none;
+}
+.circle {
+    border-radius: 1000px !important;
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    box-shadow: 1px 2px 2px 1px rgba(197, 197, 197, 0.685);
+    position: absolute;
+    top: -60px;
+    left: 50px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.p-image {
+  position: absolute;
+  top: 40px;
+  left: 120px;
+  color: #ffffff;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  width:90px;
+}
+
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button {
+  font-size: 2.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: rgb(110, 110, 110);
+}
+
+.input-containner{
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    color: rgb(110, 110, 110);
+}
+
+.input-containner input{
+    border: none;
+    width:70%;
+    text-indent: 80px;
+    color: rgb(110, 110, 110);
+}

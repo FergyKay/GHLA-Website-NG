@@ -1,0 +1,22 @@
+<div class="p-4 p-md-5 pt-5">
+  <!---Recently Added-->
+  <div style='margin-bottom:40px;'>
+    <div class="row">
+      <div class="col-md-6" style='text-align:left'>
+        <p>Suggested</p>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div *ngFor="let v of vendors" >
+        <div (click)="openVendorUrl(v.vendor_feed_url)" [ngStyle]="{'background-image':'url('+v.vendor_image_url+')'}"  class='item-display-cards' style="margin: 10px;background-position: center;background-size: contain;background-repeat: no-repeat;background-color: white;cursor: pointer;height: 300px;width: 200px;">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

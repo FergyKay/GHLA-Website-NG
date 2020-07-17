@@ -1,0 +1,91 @@
+
+   <div class="modal fade" id="dialog"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document" >
+ 
+     
+         <div class="modal-content" style='background:none; border:none;'>
+
+
+
+            <div>
+                <div class="row" style="margin: 2% auto; border:none;">
+
+                    <div class="col-md-12" style='padding:0px; margin: 0% auto; padding-left:290px; cursor: pointer;'>
+                        <span id="eye" class="fa  fa-times-circle fa-3x fa-lg backLink" style="color:rgb(143, 53, 53)"></span>
+                    </div>
+
+                    <div class="col-md-7" style='padding:0px; margin: 0% auto;'>
+            
+                       
+                        <div  class="containerr video-cover">
+                            <div style='height:100%; background-color: rgba(20, 20, 20, 0.829);'>
+            
+            
+            
+            
+                            <div class='book-cover' [ngStyle]="{'background-image':'url('+audiobook.cover+')'}">
+            
+            
+                               
+            
+            
+                                <audio width="480" controls>
+                                    <source src="{{playlist[0].url}}" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-7" style='padding:0px; border: 1px solid rgb(211, 211, 211); background: white; margin: 0% auto;'>
+                        <div style='border-bottom: 1px solid black; background-color: #dfdfdf;'>
+                        <table>
+                            <thead>
+                                <tr>
+            
+                                    <th style='width:90%;'>{{audiobook.title}}</th>
+                                    <th></th>
+            
+                                </tr>
+                            </thead>
+                        </table>
+                        </div>
+                   
+            
+                    <div style='max-height:60vh; overflow-x: auto;'>
+                        <table >
+                            <tbody>
+                                <tr *ngFor="let track of playlist">
+                                    <td style='width:100%;'><span></span> <span> {{track.title}}</span></td>
+                                    <td>
+                                        <div class="loader">
+                                            <svg id="wave" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 38.05">
+                                              <title>Audio Wave</title>
+                                              <path id="Line_1" data-name="Line 1" d="M0.91,15L0.78,15A1,1,0,0,0,0,16v6a1,1,0,1,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H0.91Z"/>
+                                              <path id="Line_2" data-name="Line 2" d="M6.91,9L6.78,9A1,1,0,0,0,6,10V28a1,1,0,1,0,2,0s0,0,0,0V10A1,1,0,0,0,7,9H6.91Z"/>
+                                              <path id="Line_3" data-name="Line 3" d="M12.91,0L12.78,0A1,1,0,0,0,12,1V37a1,1,0,1,0,2,0s0,0,0,0V1a1,1,0,0,0-1-1H12.91Z"/>
+                                              <path id="Line_4" data-name="Line 4" d="M18.91,10l-0.12,0A1,1,0,0,0,18,11V27a1,1,0,1,0,2,0s0,0,0,0V11a1,1,0,0,0-1-1H18.91Z"/>
+                                              <path id="Line_5" data-name="Line 5" d="M24.91,15l-0.12,0A1,1,0,0,0,24,16v6a1,1,0,0,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H24.91Z"/>
+                                            </svg>
+                                            </div>
+                    
+            
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            
+                </div>
+            </div>
+            
+            </div>
+
+    </div>
+    </div>
+    </div>
+   
+   
+   
+  

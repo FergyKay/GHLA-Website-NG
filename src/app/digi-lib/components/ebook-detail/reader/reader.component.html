@@ -1,0 +1,41 @@
+ <div class="modal fade" id="dialog"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+   <div class="modal-dialog modal-full" role="document" >
+
+    
+        <div class="modal-content">
+          
+       
+          <div >
+          
+              
+        <table style='width:100%'>
+          <tr>
+            <th style='height:40px; width:3%; text-align:center; cursor: pointer;' class='backLink'><span id="eye" class="fa  fa-times-circle fa-3x fa-lg" style="color:rgb(143, 53, 53)"></span></th>
+            <th style='height:40px; background: white; width:30%;'><span style=" padding:20px; display:none;">Book Title:</span></th>
+            <th style='height:40px; background: white; width:64%;'><span style=" padding:20px; display:none;">Author:</span></th>
+            <th style='height:40px;'></th>
+          </tr>
+        </table>
+        
+            <nav style="margin-top: 10px;" aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item" (click)="epubViewer.previousPage()" ><a class="page-link" style='color:#033600; margin-top:45vh;'> <span id="eye" class="fa  fa-angle-left fa-4x fa-lg" style='font-size:80px'></span></a></li>
+                  <li style="width:95%; background:white;"><i class='fa fa-spinner fa-spin fa-4x' style='margin-left:50%; margin-top:30%; color:rgb(92, 92, 92)'></i><angular-epub-viewer style="font-size: 90;" #epubViewer ></angular-epub-viewer></li>
+                  <li class="page-item" (click)="epubViewer.nextPage()"><a class="page-link" style='color:#033600; margin-top:45vh;'><span id="eye" class="fa  fa-angle-right fa-4x fa-lg" style='font-size:80px'></span></a></li>
+                </ul>
+              </nav>
+            
+        </div>
+        
+           
+         </div>
+      
+    
+   </div>
+ </div>
+
+            
+
+
+
+

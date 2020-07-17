@@ -1,0 +1,15 @@
+<div (click)="viewDetails()" class='list' style="margin: 5px;color: black;width: 230px;height: 350px; background-color: white;padding: 1px;border-radius: 2px;border-width: 0.11px;   cursor: pointer; margin-bottom:120px;" >
+
+    <img stretch="aspectFill"  src="{{parsedBook.cover}}"
+        style="height:300px;width:95%;background-color: gray;margin: 3px; border:1px solid rgb(189, 189, 189);
+        box-shadow: 1px 2px 3px rgb(173, 173, 173);">
+
+    <div class='card-body'style="vertical-align: middle; width:95%; border:1px solid rgb(189, 189, 189);
+    box-shadow: 1px 2px 3px rgb(173, 173, 173); margin-left:2.7px;">
+        <span textWrap="true" style="font-size: 14px;font-weight: bold;">{{parsedBook.title}}</span>
+        <p style="font-size: 10;margin-top: 3px;" >{{parsedBook.author}}</p>
+        <p style="font-size: 7;margin-top: 3px;font-weight: bold;">{{mediaType}}</p>
+    </div>
+   
+</div>
+

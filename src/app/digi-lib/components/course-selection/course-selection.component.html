@@ -1,0 +1,189 @@
+<div class="p-4 p-md-5 pt-5">
+  <div style='margin-bottom:40px;'>
+    <div class="row">
+      <div class="col-md-12" style='text-align:left'>
+        <p style='font-weight:600; font-size:18px; color:#033600;'>Select Course</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div id="accordion" class="myaccordion">
+          <div class="card">
+            
+            <div *ngFor="let subject of subjects" class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button (click)="loadContent(subject)" class="d-flex align-items-center justify-content-between btn btn-link" data-toggle="collapse"
+                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  {{subject.title._text}}
+                  <span class="fa-stack fa-sm">
+                    <i class="fa fa-chevron-right fa-stack-2x"></i>
+                  </span>
+                </button>
+              </h2>
+            </div>
+            <!-- <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li><a routerLinkActive="active" routerLink="/home/DigiLibrary">Financial Accounting</a></li>
+                  <li>Elective Maths</li>
+                  <li>Cost Accounting</li>
+                  <li>Mathematics</li>
+                  <li>English Language</li>
+                </ul>
+              </div>
+            </div> -->
+          </div>
+          
+          <!-- <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  General Science
+                  <span class="fa-stack fa-2x">
+                    <i class="fa fa-chevron-right fa-stack-2x"></i>
+                  </span>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Informatics</li>
+                  <li>Mathematics</li>
+                  <li>Greek</li>
+                  <li>Biostatistics</li>
+                  <li>English</li>
+                  <li>Nursing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                  aria-controls="collapseThree">
+                  Visual Arts
+                  <span class="fa-stack fa-1x">
+                    <i class="fa fa-chevron-right fa-stack-2x"></i>
+                  </span>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Astrophysics</li>
+                  <li>Informatics</li>
+                  <li>Criminology</li>
+                  <li>Economics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                  aria-controls="collapseThree">
+                  Home Economics
+                  <span class="fa-stack fa-1x">
+                    <i class="fa fa-chevron-right fa-stack-2x"></i>
+                  </span>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Astrophysics</li>
+                  <li>Informatics</li>
+                  <li>Criminology</li>
+                  <li>Economics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                  aria-controls="collapseThree">
+                  Agricultural Science
+                  <span class="fa-stack fa-1x">
+                    <i class="fa fa-chevron-right fa-stack-2x"></i>
+                  </span>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Astrophysics</li>
+                  <li>Informatics</li>
+                  <li>Criminology</li>
+                  <li>Economics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                  aria-controls="collapseThree">
+                  Visual Arts
+                  <span class="fa-stack fa-1x">
+                    <i class="fa fa-chevron-right fa-stack-2x"></i>
+                  </span>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Astrophysics</li>
+                  <li>Informatics</li>
+                  <li>Criminology</li>
+                  <li>Economics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                  aria-controls="collapseThree">
+                  Visual Arts
+                  <span class="fa-stack fa-1x">
+                    <i class="fa fa-chevron-right fa-stack-2x"></i>
+                  </span>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li>Astrophysics</li>
+                  <li>Informatics</li>
+                  <li>Criminology</li>
+                  <li>Economics</li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

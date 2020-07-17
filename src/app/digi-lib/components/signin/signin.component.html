@@ -1,0 +1,156 @@
+<div class="bg">
+   <div class="row details">
+      <div class="col-md-8">
+         <div class="col-md-12" style='margin-bottom:120px;'>
+            <div class="row">
+               <div class="col-md-1" style='padding:0px; width:10px;'>
+                  <img src="../../assets/logo/ghlaLogo.png" width='88'>
+
+               </div>
+
+               <div class="col-md-11" style='text-align:left; padding:0px;  '>
+                  <h1 style="font-weight: 600; color:#033600; margin-top: 30px; margin-left:10px;">GHANA LIBRARY AUTHORITY</h1>
+               </div>
+            </div>
+
+
+         </div>
+
+
+         <app-alert-dialog [title]="'Error!'" [message]="errorMessage" > </app-alert-dialog>
+         <app-loader></app-loader>
+
+         <div class="col-md-9" style='margin-bottom:160px;'>
+
+      
+
+            <h1 style='font-size:60px; font-weight: 600; color:#033600;'>WELCOME <span
+                  style='color:#ffb200'>BACK!</span></h1>
+            <p style='font-size:20px; line-height: 40px; color:#033600; font-weight:600;'>The Ghana Library Authority, offers you a collection of it's digital library contents. Read, Watch and listen to our eBook, video and audiobook collections even as you are empowered to seek knowledge for yourself. </p>
+
+               <div class='submit-btn' style='width:100%;'>
+                  <button  routerLink="/" class="btn btn-primary" style='font-weight:600; background:#033600; border-color:#033600;'><i class="fa fa-arrow-left fa-spin" aria-hidden="true"></i>
+                      Home</button>
+               </div>
+         </div>
+
+         <div class="col-md-9">
+            <div class="row">
+               <div class="col-md-4">
+                  <a href="http://142.11.195.10/digital_library/privacy_policy" target="_blank"> <h1 style='font-size:25px; font-weight: 600; color:#033600;'>Privacy Policy</h1></a>
+               </div>
+
+               <div class="col-md-5" style='text-align:left'>
+                  <a href="http://142.11.195.10/digital_library/terms_of_use" target="_blank"><h1 style='font-size:25px; font-weight: 600; color:#033600;'>Terms & Conditions</h1></a>
+               </div>
+            </div>
+
+         </div>
+
+      </div>
+
+      <div class="col-md-4">
+         <div class='container'>
+            <div style='width:100%; text-align:center;'>
+               <img src='../../../../../assets/logo/LOGO-TRANSPARENT.png' width='180'>
+            </div>
+
+            <form [formGroup]="loginForm" class="form-md">
+               <div class='all-inputs'>
+                  <div class="form-group">
+                     <input formControlName="username" id="form_name1" class="form-control" type="text" required>
+                     <label class='label' for="form_name1">Library ID | Email | Phone</label>
+                     <span class="icon fa fa-user fa-lg"></span>
+                  </div>
+
+                  <div class="form-group">
+                     <input formControlName="password" id="password" class="form-control" type="password" required>
+                     <label class='label' for="form_name2"> Password</label>
+                     <span class="icon fa fa-key fa-lg" ></span>
+                     <span id="eye" class="iconn fa fa-eye-slash fa-lg"></span>
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <table style='width:80%; margin:0% auto;'>
+                     <tr>
+                        <td>
+                           <label class="container-checkbox form-check-label" style='margin-top:13px; '>Remember me
+                              <input type="checkbox" class='form-check-input' checked="checked">
+                              <span class="checkmark"></span>
+                           </label>
+
+                        </td>
+
+                        <td style='text-align:right;'>
+                           <a  routerLink="/Forgotpassword" style='color:black; cursor: pointer;'><label class="form-check-label" for="exampleCheck1" style='cursor: pointer;'>Forgot
+                                 Password?</label></a>
+                        </td>
+                     </tr>
+                  </table>
+
+               </div>
+
+               <div class='submit-btn'>
+                  <button [disabled]="!loginForm.valid" (click)="login()" class="btn btn-primary" style='font-weight:600;'>SIGN IN</button>
+               </div>
+
+
+               <div class="lds-ring" style='display:none;'><div></div><div></div><div></div><div></div></div>
+
+               <div style='text-align:center;'>
+                  <p style='font-size:15px;  font-weight:600; color:#033600; margin-bottom:-20px; margin-top:60px;'>
+                     Connect Social</p>
+                  <table class='row' style='margin-left:110px'>
+
+
+                     <td style="width:70px">
+                        <a href="https://web.facebook.com/ghanalibraries?_rdc=1&_rdr" target="_blank"><img src='../../../../../assets/digi-library/icons/facebook_icon.png' width='110' style='margin-left:-30px;'></a>
+                     </td>
+
+                     <td style="width:70px;">
+                        <a href="https://www.instagram.com/ghanalibraries/?hl=en" target="_blank"><img src='../../../../../assets/digi-library/icons/instagram_icon.png' width='110' style='margin-left:-30px;'></a>
+                     </td>
+
+                     <td style="width:70px">
+                        <a href="https://twitter.com/ghanalibraries" target="_blank"><img src='../../../../../assets/digi-library/icons/twitter_icon.png' width='110' style='margin-left:-30px;'></a>
+                     </td>
+
+                     <td style="width:70px">
+                        <a href="https://www.linkedin.com/company/street-library-ghana?trk=similar-pages_result-card_full-click" target="_blank"><img src='../../../../../assets/digi-library/icons/linked_icon.png' width='110' style='margin-left:-30px;'></a>
+                     </td>
+
+
+                  </table>
+
+
+               </div>
+
+
+
+               <a style='color:black;'>
+                  <label class="form-check-label" for="exampleCheck1"
+                     style='font-size:15px;  font-weight:600; color:rgb(145, 145, 145);'>New to the library?</label>
+                  <label (click)="navigateTo('signup')" class="form-check-label" for="exampleCheck1"
+                     style='margin-left:10px; font-size:18px; color:#033600; font-weight:700;cursor: pointer;'>Sign
+                     Up</label></a>
+
+            </form>
+
+
+
+         </div>
+      </div>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>

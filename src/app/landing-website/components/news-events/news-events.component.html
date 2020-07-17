@@ -1,0 +1,88 @@
+
+
+<main id="main">
+
+    
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing news">
+       <div class="container" data-aos="fade-up" style='height:250px;'>
+ 
+        
+ 
+       </div>
+     </section><!-- End Pricing Section -->
+ <!-- ======= Breadcrumbs ======= -->
+ <section id="breadcrumbs" class="breadcrumbs">
+   <div class="container">
+
+     <ol>
+       <li><a routerLink='/'>Home</a></li>
+       <li>News & Events</li>
+     </ol>
+     <h2>News & Events Blog</h2>
+
+   </div>
+ </section><!-- End Breadcrumbs -->
+
+   <!-- ======= Portfolio Details Section ======= -->
+   <section id="portfolio-details" class="portfolio-details">
+    
+    <section class="wrapper">
+        <div class="container-fostrap" data-aos="fade-up">
+            
+      <div class="section-title">
+        <h2>News & Events</h2>
+        <p>The Ghana Library Authority.</p>
+      </div>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                       
+                            <div class="e-file-loader e-file-loader0 row">
+                            </div>
+                         
+                        <div class="col-xs-12 col-sm-6" *ngFor="let allnews of allnews1" style='margin-bottom:20px;' (click)="viewArticleId(allnews.id)">
+                            <div class="card" >
+                                <div class="card-header">
+                                    <div class="row" >
+                                        <div class="col-md-4">
+                                            NEWS
+                                        </div>
+
+                                        <div class="col-md-8" >
+                                            <p style='width:100%; background: #ffb200; height: 1px; margin-top: 8px;'></p>
+                                        </div>
+                                    </div>
+                               
+                                </div>
+                                
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a style='color:rgb(59, 59, 59); font-size: 20px;' routerLink="/">{{allnews.title}}</a>
+                                    </h4>
+
+                                    <p>  <i class="fa fa-calendar"></i> {{allnews.date}} by <a href="#">Corporate Affairs</a></p>
+                              
+                              
+                                    <p style='color:rgb(102, 102, 102);' class="">
+                                        {{allnews.description}}
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                    <a (click)="viewArticleId(allnews.id)" class="btn btn-link btn-block">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   </section><!-- End Portfolio Details Section -->
+
+ </main><!-- End #main -->

@@ -1,0 +1,1451 @@
+body{
+    background:url(../img/background1.jpg) no-repeat fixed;
+    background-size: cover;
+    background-position:bottom;
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	color: #666;
+    
+}
+
+
+
+
+
+span,label{
+font-size:14px;
+font-weight: 550;
+color: #5f5d5d;
+}
+
+h1,h2,h3{
+font-size: 100%;
+}
+
+i{
+color: #22ffb2;
+font-weight: 400;
+}
+
+input{
+font-size: 80%;
+}
+
+#form_{
+margin-bottom:20px;    
+}
+
+#form_g{
+margin-bottom:20px;    
+}
+
+#form_gg{
+margin-bottom:20px;    
+}
+
+select option:first-child{
+display:none;
+}
+
+
+#required_fields{
+color: rgba(255, 0, 0, 0.51);    
+font-size: 18px;
+}
+
+#cat_copy{
+margin-left: 15px;
+}
+
+.cat_copy{
+width:155px;
+}
+
+#cc_copy{
+margin-left: 15px;
+}
+
+#cat_mat{
+margin-left: -40px;
+}
+
+.cat_mat{
+width:181px;
+}
+
+.cat_matt{
+margin-left: -40px;
+}
+
+#cat_date{
+text-align:left; 
+margin-top:-23px;
+}
+
+#cat_dat{
+margin-left: 0px;
+}
+
+#cat_vend{
+margin-left:0px;
+}
+
+.cat_vend{
+width:254px;
+}
+
+.cat_vend1{
+width:254px;
+}
+
+#cat_cont{
+margin-left: -26px;        
+}
+
+.cat_cont{
+width:292px; 
+margin-left:px;
+}
+
+#cc_vendor{
+margin-left:-52px
+}
+
+.ccc_d{
+width: 59px;
+
+}
+
+#spinner{
+color: #f2f2f2; 
+font-weight: 400;
+}
+
+#button_text{
+color: #f2f2f2; 
+font-weight: 400;
+}
+
+#button_textt{
+color: #f2f2f2; 
+font-weight: 400;
+}
+
+#button_texttt{
+color: #f2f2f2; 
+font-weight: 400;
+}
+
+#button_textttt{
+color: #f2f2f2; 
+font-weight: 400;
+}
+
+#button_texttttt{
+color: #f2f2f2; 
+font-weight: 400;
+}
+
+.input-group-text{
+position: absolute;
+border:none;
+background: rgba(255, 255, 255, 0);
+border-radius:0px;
+font-size: 20px;
+margin-top: 8px;
+padding: 1px 0px 0px;
+}
+
+.form-control{
+border-radius: 0px;
+max-width: 100%;
+}
+
+.custom-select{
+font-weight: 450;
+font-size:13px;
+}
+
+.mb-2{
+padding: 0px 0px 50px;
+}
+
+.mb-4{
+width: 40px;
+margin-top: 7px;
+}
+
+.mb-6{
+width: 40px;
+font-size: 20px;
+}
+
+.mb-7{
+width: 70px;
+font-size: 20px;
+margin-bottom: 30px;
+}
+
+.col{
+padding: 0px;
+}
+
+
+#divi4{
+    height: 10008px;
+    width: 1008px;
+    border-style:groove;
+    border: 2px solid #dedbd9;
+    background-image: url('../img/images.jpg');
+     background-size: 100%;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    }
+
+img{
+    text-indent: -100000px;
+}
+
+
+
+
+/* Customize the label (the container) */
+.containner {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containner input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmarkk {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.containner:hover input ~ .checkmarkk {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.containner input:checked ~ .checkmarkk {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmarkk:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containner input:checked ~ .checkmarkk:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containner .checkmarkk:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+
+/* The CSS */
+#select {
+    padding:10px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:0px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 1px 0 #535353, 0 -1px #fff inset;
+    background: rgba(248, 248, 248, 0);
+    color:#535353;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #select {padding-right:18px}
+}
+
+
+#llabel {position:relative}
+#llabel:after {
+   
+    font:19px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    margin-left:  25px; 
+    top:2px;
+    padding:0 0 2px;
+    border-bottom:1px solid #ddd;
+    position:absolute;
+    pointer-events:none;
+}
+#llabel:before {
+    content:'';
+    right:6px; top:0px;
+    width:20px; 
+    height:20px;
+    background:rgba(248, 248, 248, 0);
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}
+
+
+
+
+/* The CSS */
+#selectt {
+    padding:10px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:0px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 1px 0 #535353, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#535353;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    width:370px;
+    
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #select {padding-right:18px}
+}
+
+
+#llabell {position:relative}
+#llabell:after {
+    content:'<>';
+    font:19px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    margin-left:  295px; 
+    top:2px;
+    padding:0 0 2px;
+    border-bottom:1px solid #ddd;
+    position:absolute;
+    pointer-events:none;
+}
+#llabell:before {
+    content:'';
+    right:6px; top:0px;
+    width:20px; 
+    height:20px;
+    background:#f8f8f8;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}
+
+#containe input{
+position: absolute;    
+box-sizing: border-box;
+box-shadow: none;
+outline: none;
+border:none;
+border-bottom: 1px solid #726767;
+background: rgba(255, 255, 255, 0);
+text-indent: 16px;
+font-weight: 450; 
+
+}
+
+#containe  #label{
+position: absolute;
+margin-top: 10px;
+pointer-events: none;
+margin-left:40px;
+transition: .40s;   
+transition-property: all;
+font-weight: 400;
+font-size: 15px;
+color: #989898;
+}
+
+#containe input:focus,
+#containe input:valid{
+border-bottom: 1px solid #787e59;
+
+}
+
+#containe input:focus ~#label,
+#containe input:valid ~#label{
+margin-left: 0px;
+margin-top: -23px;
+color: #787e59;
+font-size: 13px;
+font-weight: 450;
+}
+
+
+#containe-non-indent input{
+position: absolute;    
+box-sizing: border-box;
+box-shadow: none;
+outline: none;
+border:none;
+border-bottom: 1px solid #726767;
+background: rgba(255, 255, 255, 0);
+font-weight: 450;
+}
+
+#containe-non-indent  #label{
+position: absolute;
+margin-top: 10px;
+pointer-events: none;
+margin-left:10px;
+transition: .40s;   
+transition-property: all;
+font-weight: 400;
+font-size: 15px;
+color: #989898;
+}
+
+#containe-non-indent input:focus,
+#containe-non-indent input:valid{
+border-bottom: 1px solid #2796bf;
+
+}
+
+
+#containe-non-indent input:focus ~#label,
+#containe-non-indent input:valid ~#label{
+margin-left: 0px;
+margin-top: -15px;
+color: #2796bf;
+font-size: 13px;
+font-weight: 450;
+}
+
+
+.navbar{
+background:#ffffff;
+padding:px 12px;
+box-shadow: 0px 0px 0px rgba(64, 62, 62, 0.42);
+}
+
+#navbar-brand{
+font-size:14px;
+margin-left:4px;
+color:#412f2f;
+}
+
+#header{
+display:none;
+border-bottom: 2px solid rgb(242, 159, 159);
+}
+
+#navbar_bottom{
+display:none;    
+}
+
+#signin{
+margin: 10.3% auto; 
+
+}
+
+#entry_point{
+margin: -1.1% auto; 
+padding: 0px;
+}
+
+#signin1{
+margin: 5.3% auto; 
+}
+
+#menu{
+margin: 2% auto; 
+}
+
+.card{
+background: rgb(255, 255, 255);
+border: none;
+//border-bottom: 2px solid rgb(242, 159, 159);
+}
+
+
+#divMsg_phone{
+display: none;
+}
+
+#gradingg_forward{
+color: saddlebrown;
+}
+#gradingg_back{
+color: saddlebrown;
+}
+#adminSettings_forward{
+color: saddlebrown;
+}
+#adminSettings_back{
+color: saddlebrown;
+}
+
+
+table{
+font-size:60%; 
+font-weight: 550;
+width: 100%;
+}
+    
+th{
+color:#842727; 
+background: #c6c6c6;
+}
+    
+td{
+font-weight: 430;
+font-size: 11px;
+padding: 0px 0px 0px;
+}
+
+
+
+.btn{
+    /*background: #887f75;*/
+    background: #835f40;
+    color: aliceblue;
+    border: none;
+    font-size: 15px;
+    margin-top: -15px;
+}
+
+.btn:hover{
+background:#35a572;
+}
+
+
+
+
+@media (min-width: 481px) and (max-width: 767px) { 
+    
+#gnb{
+margin-top: -10px;
+margin-bottom: 30px;
+}
+    
+#cnumber{
+margin-bottom: 60px;        
+}
+    
+.btn{
+background: #666d3e;
+}
+    
+#logo{
+display:none;        
+}
+
+#form_{
+margin-bottom:20px;   
+} 
+    
+#acc{
+margin-bottom: 20px;        
+}
+    
+#cat_mat{
+margin-left: 0px;
+}
+
+.cat_mat{
+width:375%;
+}
+
+.cat_matt{
+margin-left: 0px;
+}
+    
+#cat_copy{
+margin-left: 0px;
+}
+
+.cat_copy{
+width:425%;
+}
+
+#cc_copy{
+margin-left: 0px;
+}
+    
+#cat_vend{
+margin-left:0px;
+}
+    
+.cat_vend{
+width:335%;
+}
+    
+#cat_cont{
+margin-left: 0px;        
+    }
+    
+.cat_cont{
+width:410%;
+margin-left:0px;
+}
+    
+#cc_vendor{
+margin-left:0px;       
+}
+    
+.ccc_d{
+width: 104px;
+}
+    
+body{
+width: auto;
+background: white;
+ }    
+    
+#navbar{
+display:none;       
+}
+
+#main-content{
+margin-top:40px;       
+}
+  
+ 
+.card-footer{
+display:none;    
+}
+    
+.input-group-text{
+margin-top: 6px;
+}    
+    
+#containe input{
+width: 135%;
+}
+
+    
+#containe  #label{
+font-size: 14px;
+}
+
+#containe input:focus ~#label,
+#containe input:valid ~#label{
+font-size: 13px;
+}    
+    
+/* The CSS */
+#selectt {
+width:323px;  
+}   
+    
+    
+html {
+font-size: 100%; 
+}
+      
+select,
+textarea,
+button,a,span {
+font-size: 11px;
+	line-height: 1.3;
+	font-family: sans-serif /*{global-font-family}*/;	
+}
+    
+
+.form-control{
+font-size:13px;
+font-weight: 450;
+font-family: sans-serif;
+border: 1px solid #b2b6b7; 
+padding: 8px 8px 8px;
+}    
+    
+    
+p{
+font-size: 68%;
+font-weight: 500;
+color: #767575;
+}
+    
+table{
+font-size:68%; 
+font-weight: 550;
+}
+    
+th{
+color:#842727;    
+}
+    
+td{
+font-weight: 430;
+}
+    
+h1,h2,h3{
+font-size: 120%;
+}
+    
+h4,h5{
+font-size: 15px;
+}
+    
+#signin{
+margin: 14.3% auto; 
+padding: 0px;
+}
+    
+#signin1{
+margin: 14.3% auto;  
+padding: 0px;
+}
+    
+#divMsg{
+display: none;        
+}    
+    
+#divMsg_phone{
+display: block;
+text-align:center; 
+margin: 220px auto;
+}
+      
+.card{
+jhjborder-top: 2px solid rgb(242, 159, 159);
+border-bottom: none;
+}
+        
+.card-header {
+display: none;
+}
+     
+#navbar_bottom{
+display: block; 
+}
+    
+#header{
+display: block;
+background: #818667;
+color: white;
+}
+    
+#footer{
+border-top: 1px solid rgb(242, 159, 159);
+background: #ffffff;
+height: 50px;
+}
+    
+.list-inline{
+margin-bottom: -0px;
+}
+
+#links{
+font-size: 20px; 
+
+}
+    
+#fav{
+font-size: 20px;
+color: #a0b9c3;    
+padding: 6px;
+text-shadow: 1px 1px 2px black;
+}
+    
+#footer-text{
+color: #4389a3;
+font-size: 10px;
+}
+       
+#error-messagee{
+width: 107%;  
+margin-left: -15px;
+}
+
+.alert-danger{
+background: #363636;
+color:#fdfdfd;
+text-shadow: 1px solid black;
+font-size: 13px;
+border:none;
+border-radius: 0px;
+}
+
+.alert-danger .close{
+color:#ffffff;
+text-shadow: 1px solid black;
+margin-top: -5px;
+}
+       
+.alert-success{
+background: #363636;
+color:#fdfdfd;
+text-shadow: 1px solid black;
+font-size: 13px;
+border:none;
+border-radius: 0px;
+}
+
+.alert-success .close{
+color:#ffffff;
+text-shadow: 1px solid black;
+margin-top: -5px;
+}
+   
+.btn:hover{
+background:#4389a3;
+}
+    
+#navbar-brand{
+color:#f5f5f5;
+text-shadow: 1px 1px 1px #4e4e4e;
+}
+    
+#userImage{
+font-size: 11px;
+margin-bottom: 15px;
+}
+    
+#gradingg_forward{
+color:#fff2f2;
+}
+    
+#gradingg_back{
+color:#fff2f2;
+}
+    
+#adminSettings_forward{
+color:#fff2f2;
+}
+    
+#adminSettings_back{
+color:#fff2f2;
+}
+    
+}
+
+@media (min-width: 320px) and (max-width: 480px) { 
+    
+#gnb{
+margin-top: -10px;
+margin-bottom: 30px;
+}
+    
+#cnumber{
+margin-bottom: 60px;        
+}
+    
+.btn{
+background: #666d3e;
+}
+    
+#logo{
+display:none;        
+}
+
+#form_{
+margin-bottom:20px;   
+} 
+    
+#acc{
+margin-bottom: 20px;        
+}
+    
+#cat_mat{
+margin-left: 0px;
+}
+
+.cat_mat{
+width:375%;
+}
+
+.cat_matt{
+margin-left: 0px;
+}
+    
+#cat_copy{
+margin-left: 0px;
+}
+
+.cat_copy{
+width:425%;
+}
+
+#cc_copy{
+margin-left: 0px;
+}
+    
+#cat_vend{
+margin-left:0px;
+}
+    
+.cat_vend{
+width:335%;
+}
+    
+#cat_cont{
+margin-left: 0px;        
+    }
+    
+.cat_cont{
+width:410%;
+margin-left:0px;
+}
+    
+#cc_vendor{
+margin-left:0px;       
+}
+    
+.ccc_d{
+width: 104px;
+}
+    
+body{
+width: auto;
+background: white;
+ }    
+    
+#navbar{
+display:none;       
+}
+
+#main-content{
+margin-top:40px;       
+}
+  
+ 
+.card-footer{
+display:none;    
+}
+    
+.input-group-text{
+margin-top: 6px;
+}    
+    
+#containe input{
+width: 135%;
+}
+
+    
+#containe  #label{
+font-size: 14px;
+}
+
+#containe input:focus ~#label,
+#containe input:valid ~#label{
+font-size: 13px;
+}    
+    
+/* The CSS */
+#selectt {
+width:323px;  
+}   
+    
+    
+html {
+font-size: 100%; 
+}
+      
+select,
+textarea,
+button,a,span {
+font-size: 11px;
+	line-height: 1.3;
+	font-family: sans-serif /*{global-font-family}*/;	
+}
+    
+
+.form-control{
+font-size:13px;
+font-weight: 450;
+font-family: sans-serif;
+border: 1px solid #b2b6b7; 
+padding: 8px 8px 8px;
+}    
+    
+    
+p{
+font-size: 68%;
+font-weight: 500;
+color: #767575;
+}
+    
+table{
+font-size:68%; 
+font-weight: 550;
+}
+    
+th{
+color:#842727;    
+}
+    
+td{
+font-weight: 430;
+}
+    
+h1,h2,h3{
+font-size: 120%;
+}
+    
+h4,h5{
+font-size: 15px;
+}
+    
+#signin{
+margin: 14.3% auto; 
+padding: 0px;
+}
+    
+#signin1{
+margin: 14.3% auto;  
+padding: 0px;
+}
+    
+#divMsg{
+display: none;        
+}    
+    
+#divMsg_phone{
+display: block;
+text-align:center; 
+margin: 220px auto;
+}
+      
+.card{
+jhjborder-top: 2px solid rgb(242, 159, 159);
+border-bottom: none;
+}
+        
+.card-header {
+display: none;
+}
+     
+#navbar_bottom{
+display: block; 
+}
+    
+#header{
+display: block;
+background: #818667;
+color: white;
+}
+    
+#footer{
+border-top: 1px solid rgb(242, 159, 159);
+background: #ffffff;
+height: 50px;
+}
+    
+.list-inline{
+margin-bottom: -0px;
+}
+
+#links{
+font-size: 20px; 
+
+}
+    
+#fav{
+font-size: 20px;
+color: #a0b9c3;    
+padding: 6px;
+text-shadow: 1px 1px 2px black;
+}
+    
+#footer-text{
+color: #4389a3;
+font-size: 10px;
+}
+       
+#error-messagee{
+width: 107%;  
+margin-left: -15px;
+}
+
+.alert-danger{
+background: #363636;
+color:#fdfdfd;
+text-shadow: 1px solid black;
+font-size: 13px;
+border:none;
+border-radius: 0px;
+}
+
+.alert-danger .close{
+color:#ffffff;
+text-shadow: 1px solid black;
+margin-top: -5px;
+}
+       
+.alert-success{
+background: #363636;
+color:#fdfdfd;
+text-shadow: 1px solid black;
+font-size: 13px;
+border:none;
+border-radius: 0px;
+}
+
+.alert-success .close{
+color:#ffffff;
+text-shadow: 1px solid black;
+margin-top: -5px;
+}
+   
+.btn:hover{
+background:#4389a3;
+}
+    
+#navbar-brand{
+color:#f5f5f5;
+text-shadow: 1px 1px 1px #4e4e4e;
+}
+    
+#userImage{
+font-size: 11px;
+margin-bottom: 15px;
+}
+    
+#gradingg_forward{
+color:#fff2f2;
+}
+    
+#gradingg_back{
+color:#fff2f2;
+}
+    
+#adminSettings_forward{
+color:#fff2f2;
+}
+    
+#adminSettings_back{
+color:#fff2f2;
+}
+    
+}
+
+.card-header{
+text-transform: uppercase;
+	color: #6a5b31;
+	letter-spacing: 1px;
+	font-size: 1.4em;
+	line-height: 2.8em;
+    border-bottom: 2px solid #72b3d0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+   
+    
+background:rgb(224, 224, 218);
+
+}
+
+.card-footer{
+border-top:2px solid #72b3d0;
+border-bottom:1px solid background: #dfe0dc;
+background: #dfe0dc;
+
+}
+
+.modal-header{
+text-transform: uppercase;
+	color: #6a5b31;
+	letter-spacing: 1px;
+	font-size: 1.4em;
+	line-height: 2.8em;
+    border-bottom: 4px solid rgb(90, 90, 90)
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background: #4389a3;
+    padding: 10px 10px; 4px
+}
+
+.modal-body{
+ border-top: 0px solid rgb(90, 90, 90)    
+}
+
+.box-header {
+	background-color: #4f6e71;
+	margin-top: 0;
+	border-radius: 5px 5px 0 0;
+    border: none;
+    
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }
+
+
+
+
+.form-control:focus{
+border-color: #6c5e39;  
+box-shadow: none;
+-webkit-box-shadow: none;
+} 
+
+#error-message{
+width: 110%;  
+margin-left: -16px;
+border-top: 2px solid rgb(242, 159, 159);
+}
+
+#network-error-message{
+width: 110%;  
+margin-left: -16px;
+border-top: 2px solid rgb(242, 159, 159);
+}
+
+#success-message{
+width: 110%;  
+margin-left: -16px;
+border-top: 2px solid rgb(242, 159, 159);
+}
+
+.alert-danger{
+background: #363636;
+color:#c9aaaa;
+text-shadow: 2px 2px 1px 1px black;
+border:none;
+border-radius: 0px;
+}
+
+.alert-danger .close{
+color:#ffffff;
+text-shadow: 1px solid black;
+}
+
+.alert-success{
+background: #363636;
+color:#aac9b0;
+text-shadow: 2px 2px 1px 1px black;
+border:none;
+border-radius: 0px;
+}
+
+.alert-success .close{
+color:#ffffff;
+text-shadow: 1px solid black;
+}
+
+#targetOuter{
+height: 120px;
+width: 120px;
+border: 3px solid rgb(77, 131, 185);
+background-image: url('../img/images.jpg');
+background-size: 120px;
+background-repeat: no-repeat;
+position:relative;
+text-align: center;
+margin: 0px auto; 
+}
+
+#targetOuterr{
+height: 75px;
+width: 75px;
+border: 3px solid rgb(212, 108, 124);
+background-size: 120px;
+background-repeat: no-repeat;
+position:relative;
+text-align: center;
+margin: 0px auto; 
+border-radius:100px;
+}
+
+#userImage{
+    margin-top: 10px;
+    background: white;
+    
+}
+
+.upload-preview {
+border-radius:0px;
+}
+
+#body-overlay {
+background-color: rgba(0, 0, 0, 0.6);
+z-index: 999;position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+display: none;
+}
+
+#body-overlay div {
+position:absolute;
+left:50%;
+top:50%;
+margin-top:-32px;
+margin-left:-32px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+    border:none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#checkbox_text{
+font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#studentImage{
+height: 58px;
+width: 58px;
+border: 3px solid rgb(77, 131, 185);
+background-image: url('../images/images/unknown2-128.png');
+background-position: center;
+background-size: 57px;
+background-repeat: no-repeat;
+position:relative;
+text-align: center;
+margin: 0px auto;
+border-radius: 500px;
+margin-bottom: 15px;
+}
+
+img{
+    text-indent: -100000px;
+} 

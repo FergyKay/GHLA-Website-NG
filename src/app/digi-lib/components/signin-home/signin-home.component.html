@@ -1,0 +1,341 @@
+
+      
+             <div class="row">
+                 <div class="col-md-12" style="margin:0% auto; ">
+                  
+                  <div class="row">
+
+
+
+
+                    <div class="col-md-10" style='text-align:left'>
+                      <p style='font-weight: 500;'>Recently Added</p>
+                    </div>
+                     
+                    <div class="col-md-2" style="text-align:right;">
+                      <table style="margin-left:30%;">
+                        <tr>
+                          <td style="text-align:right;">
+                            <div class='div'>
+                              
+                            <a class='seek horizon-prev'>
+                              <i class="icofont-simple-left" style='font-size:25px;'></i>
+                            </a>
+                          </div>
+                        </td>
+                          <td style="text-align:right"> 
+                            <div class='div'>
+                             
+                            <a class='seek horizon-next'>
+                              <i class="icofont-simple-right" style='font-size:25px;'></i>
+                             
+                            </a>
+                          </div></td>
+        
+                          <td>
+                            <div *ngIf="recentEbookNavLinksLoaded" style='text-align:right'>
+                              <p (click)="seeAllRecentEbooks()" style="cursor: pointer; margin-top:10px;">See more</p>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                       
+                      </div>
+                    
+                  </div>
+
+                 
+                  <div class="center" id="content"  style='overflow:scroll;  padding: 0px;'>
+                    <div id="grid" class="row-fluid ">
+          
+                      <table  style='max-width:100%; '>
+                        <tr class="e-file-loader e-file-loader0">
+                        </tr>
+                      </table>
+                      
+                        <div (click)="showDetails(ebook)"  *ngFor="let ebook of recentEbooks" style="cursor: pointer; " class="mix col-sm-2 page1 page4 margin30 content">
+                          
+                            <div class="item-img-wrap" [ngStyle]="{'background-image':'url('+ebook.cover+')'}">
+                              
+                                <div class="item-img-overlay">
+                                    <a  class="show-image">
+                                        <span></span>
+                                    </a>
+                                   
+                                </div>
+                               
+                               
+                            </div>
+          
+                            <div><h1 class='a'  style='color:black; font-weight:600; font-size:17px;'>{{ebook.title}}</h1></div>
+                            <div><a class='a' style='color:rgb(122, 122, 122); margin-top:-20px;'>{{ebook.author}}</a></div>
+                            <div><a class='a' style='color:rgb(122, 122, 122); margin-top:0px;'>E-book</a></div>
+                           </div>
+          
+                        </div>
+                  </div>
+               
+
+                 </div>
+             </div>
+
+             <div class="row">
+              <div class="col-md-12" style="margin:1% auto; ">
+
+               <div class="row">
+
+
+
+
+                 <div class="col-md-10" style='text-align:left'>
+                   <p style='font-weight: 500;'>Popular E-books</p>
+                 </div>
+
+                 <div class="col-md-2" style="text-align:right;">
+                  <table style="margin-left:30%;">
+                    <tr>
+                      <td style="text-align:right;">
+                        <div class='div'>
+                          
+                        <a class='seek horizon-prev-ebook'>
+                          <i class="icofont-simple-left" style='font-size:25px;'></i>
+                        </a>
+                      </div>
+                    </td>
+                      <td style="text-align:right"> 
+                        <div class='div'>
+                         
+                        <a class='seek horizon-next-ebook'>
+                          <i class="icofont-simple-right" style='font-size:25px;'></i>
+                         
+                        </a>
+                      </div></td>
+    
+                      <td>
+
+                        <div *ngIf="recentEbookNavLinksLoaded"  style='text-align:right'>
+                          <p (click)="seeAll('ebook')" style="cursor: pointer; margin-top:10px;">See more</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                   
+                  </div>
+                
+           
+                 
+               </div>
+           
+              <div class="center" id="content-ebook" style='overflow: scroll; padding: 0px;  box-shadow: 0px 2px rgb(243, 243, 243);'>
+                  <div id="grid" class="row-fluid">
+
+                    <table  style='max-width:100%; '>
+                      <tr class="e-file-loader e-file-loader1">
+                      </tr>
+                    </table>
+
+
+
+                    <div (click)="showDetails(ebook)" *ngFor="let ebook of popularEbooks"  style="cursor: pointer;" class="mix col-sm-2 page1 page4 margin30">
+                      <div class="item-img-wrap "  [ngStyle]="{'background-image':'url('+ebook.cover+')'}">     
+                          <div class="item-img-overlay">
+                              <a  class="show-image">
+                                  <span></span>
+                              </a>
+                          </div>
+
+                          
+                      </div>
+                      <div><h1 class='a'  style='color:black; font-weight:600; font-size:17px;'>{{ebook.title}}</h1></div>
+                          <div><a class='a' style='color:rgb(122, 122, 122); margin-top:-20px;'>{{ebook.author}}</a></div>
+                          <div><a class='a' style='color:rgb(122, 122, 122); margin-top:0px;'>E-book</a></div>
+                     </div>
+
+                      <!-- <div (click)="showDetails(ebook)" *ngFor="let ebook of popularEbooks"  style="cursor: pointer;" class="mix col-sm-2 page1 page4 margin30">
+                          <div class="item-img-wrap "  [ngStyle]="{'background-image':'url('+ebook.cover+')'}">
+                            <div class="loader">
+
+                             
+                              </div>
+                              <div class="item-img-overlay">
+                                  <a  class="show-image">
+                                      <span></span>
+                                  </a>
+                              </div>
+                          </div> 
+                         </div> -->
+                      </div>
+                                                                    
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12" style="margin:0% auto; ">
+
+             <div class="row">
+
+
+
+
+               <div class="col-md-10" style='text-align:left'>
+                 <p style='font-weight: 500;'>Popular Audio books</p>
+               </div>
+
+               <div class="col-md-2">
+                <table style="margin-left:30%;">
+                  <tr>
+                    <td>
+                      <div class='div'>
+                        
+                      <a class='seek horizon-prev-audio'>
+                        <i class="icofont-simple-left" style='font-size:25px;'></i>
+                      </a>
+                    </div>
+                  </td>
+                    <td> 
+                      <div class='div'>
+                       
+                      <a class='seek horizon-next-audio'>
+                        <i class="icofont-simple-right" style='font-size:25px;'></i>
+                       
+                      </a>
+                    </div></td>
+
+                    <td>
+                      <div *ngIf="popularAudibooksLinksLoaded"  style='text-align:right'>
+                        <p (click)="seeAll('audiobook')" style="cursor: pointer; margin-top:10px;">See more</p>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                 
+                </div>
+        
+             </div>
+         
+            <div class="center"  id="content-audio" style='overflow: scroll;  padding: 0px; box-shadow: 0px 2px rgb(243, 243, 243);'>
+                <div id="grid" class="row-fluid">
+
+                  <table  style='max-width:100%; '>
+                    <tr class="e-file-loader e-file-loader2">
+                    </tr>
+                  </table>
+
+                    <div (click)="showAudiobook(audiobook)" *ngFor="let audiobook of popularAudiobooks"  style="cursor: pointer;" class="mix col-sm-2 page1 page4 margin30">
+                        <div class="item-img-wrap "  [ngStyle]="{'background-image':'url('+audiobook.cover+')'}">
+
+
+                          <div class="loader">
+                            <svg id="wave" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 38.05">
+                              <title>Audio Wave</title>
+                              <path id="Line_1" data-name="Line 1" d="M0.91,15L0.78,15A1,1,0,0,0,0,16v6a1,1,0,1,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H0.91Z"/>
+                              <path id="Line_2" data-name="Line 2" d="M6.91,9L6.78,9A1,1,0,0,0,6,10V28a1,1,0,1,0,2,0s0,0,0,0V10A1,1,0,0,0,7,9H6.91Z"/>
+                              <path id="Line_3" data-name="Line 3" d="M12.91,0L12.78,0A1,1,0,0,0,12,1V37a1,1,0,1,0,2,0s0,0,0,0V1a1,1,0,0,0-1-1H12.91Z"/>
+                              <path id="Line_4" data-name="Line 4" d="M18.91,10l-0.12,0A1,1,0,0,0,18,11V27a1,1,0,1,0,2,0s0,0,0,0V11a1,1,0,0,0-1-1H18.91Z"/>
+                              <path id="Line_5" data-name="Line 5" d="M24.91,15l-0.12,0A1,1,0,0,0,24,16v6a1,1,0,0,0,2,0s0,0,0,0V16a1,1,0,0,0-1-1H24.91Z"/>
+                            </svg>
+                            </div>
+                          
+                            <div class="item-img-overlay">
+                                <a class="show-image">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div> 
+
+                      
+                        <div><h1 class='a'  style='color:black; font-weight:600; font-size:17px;'>{{audiobook.title}}</h1></div>
+                        <div><a class='a' style='color:rgb(122, 122, 122); margin-top:-20px;'>{{audiobook.author}}</a></div>
+                        <div><a class='a' style='color:rgb(122, 122, 122); margin-top:0px;'>Audio Book</a></div>
+                  
+
+                        
+                       </div>
+                    </div>
+                                                                  
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-12" style="margin:1% auto; ">
+
+           <div class="row">
+             <div class="col-md-10" style='text-align:left'>
+               <p style='font-weight: 500;'>Popular Videos</p>
+             </div>
+
+             <div class="col-md-2" style="text-align:right;">
+              <table style="margin-left:30%;">
+                <tr>
+                  <td style="text-align:right;">
+                    <div class='div'>
+                      
+                    <a class='seek horizon-prev-video'>
+                      <i class="icofont-simple-left" style='font-size:25px;'></i>
+                    </a>
+                  </div>
+                </td>
+                  <td style="text-align:right"> 
+                    <div class='div'>
+                     
+                    <a class='seek horizon-next-video'>
+                      <i class="icofont-simple-right" style='font-size:25px;'></i>
+                     
+                    </a>
+                  </div></td>
+
+                  <td>
+                    <div *ngIf="popularVideosLinksLoaded"  style='text-align:right '>
+                      <p (click)="seeAll('video')" style="cursor: pointer; margin-top:10px;">See more</p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+               
+              </div>
+        
+    
+       
+           
+           </div>
+       
+          <div  class="center" id="content-video"  style='overflow: scroll;  padding: 0px; box-shadow: 0px 2px rgb(243, 243, 243);'>
+              <div id="grid" class="row-fluid" style='max-width:80%; '>
+
+
+                <table  style='max-width:100%; '>
+                  <tr class="e-file-loader e-file-loader3">
+                  </tr>
+                </table>
+
+                <div (click)="showVideo(video)" *ngFor="let video of popularVideos"  style="cursor: pointer;" class="mix col-sm-5 page1 page4 margin30">
+                        
+                  <div class="item-img-wrap "  [ngStyle]="{'background-image':'url('+video.cover+')'}" >
+                   
+                      <div class="loader">
+
+                          <i class='icofont-play-alt-2' style='margin-top:0px; font-size:80px; color: rgb(221, 221, 221)'></i>
+                          </div>
+                      <div class="item-img-overlay">
+                          <a  class="show-image">
+                              <span></span>
+                          </a>
+                      </div>
+                  </div>
+                  <div><h1 class='a'  style='color:black; font-weight:600; font-size:17px;'>{{video.title}}</h1></div>
+                      <div><a class='a' style='color:rgb(122, 122, 122); margin-top:-20px;'>{{video.author}}</a></div>
+                      <div><a class='a' style='color:rgb(122, 122, 122); margin-top:0px;'>Video</a></div>
+                 </div>
+
+            
+                                                                
+              </div>
+          </div>
+      </div>
+      </div>
+           
+        

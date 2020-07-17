@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-11">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 style='font-weight:600;  color:#033600;'>Help & Feedback</h1>
+      <p>To change your password, please fill below inputs.</p>
+
+    </div>
+
+    <app-alert-dialog [title]="'Alert!'" [message]="message"> </app-alert-dialog>
+      <app-loader></app-loader>
+      
+    <form style="width: 100vh;" [formGroup]="feedbackForm">
+      <div class="col-md-12" style='margin-bottom:30px;'>
+        <input formControlName="name" type='text' value='' style='width:60%; padding:30px; border:1px solid rgb(126, 126, 126); font-size:30px; background: white;'>
+      </div>
+
+      <div class="col-md-12" style='margin-bottom:30px;'>
+        <input formControlName="email" type='text' value='' style='width:60%; padding:30px; border:1px solid rgb(126, 126, 126); font-size:30px; background: white;'>
+      </div>
+
+
+      <div class="col-md-12" style='margin-bottom:30px;'>
+        <textarea formControlName="message"  value='' placeholder="write your message here......." style='width:100%; padding:25px; padding-bottom: 170px; border:1px solid rgb(126, 126, 126); font-size:30px;'></textarea>
+      </div>
+
+
+      <div class="col-md-12" style='padding-left:120px;'>
+        <input  (click)="submitFeedBack()" [disabled]="!feedbackForm.valid" class="btn btn-primary" value="SUBMIT" style='font-weight:600; background: #033600; font-size:28px; border:none; width:50%; padding:18px;'>
+      </div>
+    </form>
+
+
+  </div>
+</div>
