@@ -138,19 +138,7 @@ export class SigninHomeComponent implements OnInit {
 
   search() {
 
-    // if (this.queryTerms.length > 2) {
-    //   let p = new Loader()
-    //   p.show()
-    //   this.dataService.search(this.queryTerms).then(entries => {
-    //     p.hide()
-    //     this.router.navigate(['../search'], { queryParams: { params: JSON.stringify(entries) }, relativeTo: this.activatedRoute })
-    //   }, error => {
-    //     p.hide()
-    //     new Alerter().showError("No entries")
-    //   })
-    // } else {
-    //   new Alerter().showError("Keywords must be more than 2 letters long!")
-    // }
+    
   }
 
 

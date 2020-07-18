@@ -55,6 +55,7 @@ import { ForgotPasswordComponent } from './digi-lib/components/signin/forgot-pas
 import { VerificationComponent } from './digi-lib/components/signin/verification/verification.component';
 import { ReplacePasswordComponent } from './digi-lib/components/signin/replace-password/replace-password.component';
 import { LoaderComponent } from './digi-lib/components/loader/loader.component';
+import { SearchViewComponent } from './digi-lib/components/search-view/search-view.component';
 
 // import { ForgotPasswordComponent } from './digi-lib/components/signin/forgot-password/forgot-password.component';
 // import { VerificationComponent } from './digi-lib/components/signin/verification/verification.component';
@@ -118,6 +119,7 @@ const routes: Route[] = [
       { path: 'video-details', component: VideoDetailComponent },
       { path: 'reader', component: ReaderComponent },
       { path: 'more', component: SeeAllComponent },
+      { path: 'search', component: SearchViewComponent },
     ]
   },
   { path: '', redirectTo: 'web-home', pathMatch: 'full' },
@@ -181,7 +183,9 @@ const routes: Route[] = [
     ForgotPasswordComponent,
     VerificationComponent,
     ReplacePasswordComponent,
-    LoaderComponent
+    LoaderComponent,
+    SearchViewComponent,
+    HomeComponent
    
     
 

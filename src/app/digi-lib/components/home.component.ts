@@ -1,5 +1,6 @@
+import { UiService } from './../../services/ui.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
 
@@ -11,6 +12,9 @@ declare var $;
   styleUrls: ['home.component.css', '../../digi-lib/components/digi-library-assets/css/style.css']
 })
 export class HomeComponent implements OnInit {
+
+ 
+  @ViewChild('searchBox', { static: false }) searchBox: ElementRef
 
 
   superNavigationLevel = [] //Level 1 navigation
@@ -27,65 +31,67 @@ export class HomeComponent implements OnInit {
   audioboksUrl: any;
   videosUrl: any;
 
-  
-  constructor(private dataService: DataService,private router:Router) {
+  errorMessage;
+
+
+  constructor(private dataService: DataService, private router: Router,private uiService:UiService) {
 
   }
 
   ngOnInit(): void {
-    $('#dialog').modal('show');
-    $('.backLink').click(function(){
+  
+    $('.backLink').click(function () {
       parent.history.back();
       return false;
-  });
+    });
 
-  $('.forwardLink').click(function(){
-    parent.history.go(+1);
-    return false;
-});
+    $('.forwardLink').click(function () {
+      parent.history.go(+1);
+      return false;
+    });
 
 
 
 
     var trigger = $('.hamburger'),
       overlay = $('.overlay'),
-     isClosed = false;
-     $('#wrapper').toggleClass('toggled');
+      isClosed = false;
+    $('#wrapper').toggleClass('toggled');
     trigger.click(function () {
-      hamburger_cross();      
+      hamburger_cross();
     });
 
     function hamburger_cross() {
 
-      if (isClosed == true) {          
+      if (isClosed == true) {
         overlay.hide();
         trigger.removeClass('is-open');
         trigger.addClass('is-closed');
         isClosed = false;
-      } else {   
+      } else {
         overlay.show();
         trigger.removeClass('is-closed');
         trigger.addClass('is-open');
         isClosed = true;
       }
-  }
-  
-  $('[data-toggle="offcanvas"]').click(function () {
-        $('#wrapper').toggleClass('toggled');
-  });  
+    }
+
+    $('[data-toggle="offcanvas"]').click(function () {
+      $('#wrapper').toggleClass('toggled');
+    });
 
 
 
-  $(".sidebar-nav .parent").click(function() {
-    $(".sidebar-nav .parent").removeClass("active");
-    $(this).addClass("active");
-  });
+    $(".sidebar-nav .parent").click(function () {
+      $(".sidebar-nav .parent").removeClass("active");
+      $(this).addClass("active");
+    });
 
-  $(".child").on("click",function() {
-alert(1)
-    $(".child").removeClass("active1");
-    $(this).addClass("active1");
-  });
+    $(".child").on("click", function () {
+      alert(1)
+      $(".child").removeClass("active1");
+      $(this).addClass("active1");
+    });
     this.dataService.getInitialFeed().then(entries => {
       (entries as any).forEach(entry => {
         if (!(entry.title._text as String).includes("Tertiary")) {
@@ -97,7 +103,7 @@ alert(1)
 
 
   navClicked(level) {
-    
+
     this.isSuperNavClicked = false
     this.subNavLinks = []
 
@@ -112,7 +118,7 @@ alert(1)
     })
   }
 
-  subNavClicked(subLevel){
+  subNavClicked(subLevel) {
     this.isSubNavClicked = false
     this.subSubNavLinks = []
 
@@ -120,36 +126,36 @@ alert(1)
       this.isSubNavClicked = true
       if (!isPenUltimateField) {
         this.dataService.pullFromFeed(subLevel.link._attributes.href).then(entries => {
-        
+
           this.subSubNavLinks = entries as any
           this.subSubNavTarget = subLevel.title._text
         })
-      }else{
-       this.routeToCoursesView(subLevel.link._attributes.href)
+      } else {
+        this.routeToCoursesView(subLevel.link._attributes.href)
       }
     })
   }
 
 
 
-//Assumption is that it will be a penultimate level as in the entries in this levels will lead straight to content
-  subSubNavClicked(subSubLevel){
+  //Assumption is that it will be a penultimate level as in the entries in this levels will lead straight to content
+  subSubNavClicked(subSubLevel) {
     this.routeToCoursesView(subSubLevel.link._attributes.href)
   }
 
 
 
-  routeToCoursesView(link){
-      this.router.navigate(["/home/Courseselection"],{queryParams:{url:encodeURI(link)}})
+  routeToCoursesView(link) {
+    this.router.navigate(["/home/Courseselection"], { queryParams: { url: encodeURI(link) } })
   }
 
 
-  logout(){
+  logout() {
     localStorage.clear()
     window.location.reload()
   }
 
-  showContent(hrefToForms,targetName) {
+  showContent(hrefToForms, targetName) {
 
     // let loader = new Loader();
     // loader.show()
@@ -161,10 +167,10 @@ alert(1)
 
     this.dataService.pullFromFeed(hrefToForms).then(entries => {
 
-      this.dataService.getFeedNavLinks().then(links=>{
+      this.dataService.getFeedNavLinks().then(links => {
         this.navigationLinks = links
         // console.log(this.navigationLinks)
-      
+
 
         this.ebooksUrl = entries[0].link._attributes.href;
         this.audioboksUrl = entries[1].link._attributes.href;
@@ -173,26 +179,64 @@ alert(1)
 
         // console.log(this.ebooksUrl)
 
-      
+
 
 
         this.router.navigate(['/home/content'], {
           queryParams: {
-            initial:hrefToForms,
+            initial: hrefToForms,
             title: targetName,
             ebooks: this.ebooksUrl,
             audiobooks: this.audioboksUrl,
             videos: this.videosUrl,
-            navLinks:JSON.stringify(this.navigationLinks)
+            navLinks: JSON.stringify(this.navigationLinks)
           }
         })
 
       })
 
-    
-    }).catch(err=>{
+
+    }).catch(err => {
       // loader.hide()
     })
+
+  }
+
+  search() {
+    // alert(this.searchBox.nativeElement.value)
+    // this.router.navigate(['/home/search'])
+
+    // this.uiService.showLoader()
+
+    let queryTerms = this.searchBox.nativeElement.value
+
+    if (queryTerms.length > 2) {
+      // let p = new Loader()
+      // p.show()
+
+      this.dataService.search(queryTerms).then(entries => {
+        // p.hide()
+        // this.uiService.hideLoader()
+        ///console.log(entries)
+         this.router.navigate(['/home/search'], { queryParams: { params: JSON.stringify(entries) }})
+        //  window.location.reload()
+      }, error => {
+        // p.hide()
+        // this.uiService.hideLoader()
+        this.errorMessage = "No Entries"
+        alert(this.errorMessage)
+
+        this.uiService.showDialog()
+        // new Alerter().showError("No entries")
+      })
+    } else {
+      // this.uiService.hideLoader()
+    
+      this.errorMessage = "Keywords must be more than 2 letters long!"
+      alert(this.errorMessage)
+      this.uiService.showDialog()
+      // new Alerter().showError("Keywords must be more than 2 letters long!")
+    }
 
   }
 

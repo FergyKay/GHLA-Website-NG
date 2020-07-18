@@ -1,0 +1,43 @@
+
+    <!---Recently Added-->
+    <div style='margin-bottom:40px;'>
+        <div class="row">
+            <div class="col-md-6" style='text-align:left'>
+                <!-- <p>{{mediaType}}</p> -->
+            </div>
+        </div>
+
+        
+
+        
+       
+        <div class="row">
+            <!-- <div *ngFor="let entry of entries" style="margin: 2px;cursor: pointer;"
+          class="col-md-2"> -->
+
+
+
+          <div style="cursor: pointer; " class="row e-file-loader " ></div>
+            <app-item [item]="entry" *ngFor="let entry of entries; let i = index"></app-item>
+            <!-- </div> -->
+
+
+         
+
+        </div>
+
+
+        <div class="row" style=' margin:0% auto;'>
+          <div class="col-md-12" style=' margin:0% auto;'>
+            <div class="btn-group">
+              <button *ngIf="self!==''" (click)="backToTop()" class="button" style='border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-right:1px solid rgb(94, 94, 94);'>Start</button>
+              <button *ngIf="previous!==''" (click)="prevPage()" class="button" style='border-radius: 0px; border-right:1px solid rgb(94, 94, 94);'>Previous</button>
+              <button *ngIf="next!==''" (click)="nextPage()" class="button" style='border-top-left-radius: 0px; border-bottom-left-radius: 0px;'>Next</button>
+            </div>
+        </div>
+    </div>
+   
+
+
+
+
