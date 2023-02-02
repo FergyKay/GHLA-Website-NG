@@ -30,7 +30,7 @@
     "file-saver": "^2.0.2",
     "font-awesome": "^4.7.0",
     "install": "^0.13.0",
-    "jszip": "^2.6.1",
+    "jszip": "^3.8.0",
     "jwt-decode": "^2.2.0",
     "ngx-device-detector": "^1.4.5",
     "rxjs": "~6.5.4",
